@@ -1,0 +1,18 @@
+{
+  "name": "dsc-pens-event-platform",
+  "authors": [
+    "Maxxoto <ahmatdanis24@gmail.com>"
+  ],
+  "description": "DSC-PENS-APPS",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

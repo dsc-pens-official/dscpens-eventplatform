@@ -1,9 +1,0 @@
-{
-  "name": "dsc-pens-event-platform",
-  "version": "1.0.0",
-  "description": "DSC-Pens-Yarn-Packages",
-  "main": "index.js",
-  "repository": "https://gitlab.com/dsc-pens-event-platform/dsc-pens-event-platform.git",
-  "author": "Maxxoto <ahmatdanis24@gmail.com>",
-  "license": "MIT"
-}
