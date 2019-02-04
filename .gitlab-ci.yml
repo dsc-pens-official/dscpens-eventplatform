@@ -1,9 +1,8 @@
-image: node:latest
+image: node:9.7.1
 
 cache:
   paths:
     - node_modules/
-    - app/bower_components
 
 deploy_production:
   stage: deploy
