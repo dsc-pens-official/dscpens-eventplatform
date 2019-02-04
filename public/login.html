@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DSC PENS - Event Platform Login</title>
+
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900|RobotoDraft:400,100,300,500,700,900'>
+  <!-- Bootstrap core CSS -->
+    <link href="asset/front/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="asset/front/css/style.css">
+    <link rel="stylesheet" href="login.css">
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  
+</head>
+
+<body id="LoginForm">
+
+  <div class="container">
+      <hr>
+<h1 class="form-heading">Login</h1>
+      <hr>
+<div class="login-form">
+<div class="main-div">
+    <div class="panel">
+<!--   <h1>LOGIN</h1>-->
+        <img  class="img-fluid mb-3 d-block mx-auto" width="200" height="200" src="dscpens.png" alt="">
+   </div>
+    <form id="Login">
+        <div id="firebaseui-auth-container"></div>
+        <hr>
+
+<!--
+        <div class="form-group">
+
+
+            <input type="email" class="form-control" id="inputEmail" placeholder="Email Address">
+
+        </div>
+
+        <div class="form-group">
+
+            <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+
+        </div>
+        <div class="forgot">
+        <a href="reset.html">Forgot password?</a>
+</div>
+        <button type="submit" class="btn btn-primary">Login</button>
+-->
+
+    </form>
+    </div>
+<p class="botto-text">DSC PENS</p>
+</div></div></div>
+
+<!-- Form Mixin-->
+<!-- Input Mixin-->
+<!-- Button Mixin-->
+<!-- Pen Title-->
+<!--
+<div class="pen-title">
+    
+  <h1>Go - Tour Login</h1><span>Login</span>
+</div>
+-->
+<script src="asset/front/vendor/jquery/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+
+    <!-- member plugins -->
+    <script src="https://www.gstatic.com/firebasejs/ui/live/0.4/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/live/0.4/firebase-ui-auth.css" />
+    <!-- End - member plugins -->
+
+
+<script src="https://www.gstatic.com/firebasejs/5.7.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBA9GF6vq0z5_qUWrVOUzaGy1P--ZqDQXM",
+    authDomain: "dscpens-event.firebaseapp.com",
+    databaseURL: "https://dscpens-event.firebaseio.com",
+    projectId: "dscpens-event",
+    storageBucket: "dscpens-event.appspot.com",
+    messagingSenderId: "980829139366"
+  };
+  firebase.initializeApp(config);
+</script>
+    <script>
+        // Initialize Firebase
+//      var config = {
+//        apiKey: "AIzaSyC2ItcELyyllBwU_ikPbPPiZ3CphLB5b8k",
+//        authDomain: "final-pwa.firebaseapp.com",
+//        databaseURL: "https://final-pwa.firebaseio.com",
+//        projectId: "final-pwa",
+//        storageBucket: "",
+//        messagingSenderId: "114617687876"
+//      };
+//      firebase.initializeApp(config);
+
+        /////////////////////////////////////
+
+
+        /**********************\
+         * Check login status *
+        \**********************/
+
+        firebase.auth().onAuthStateChanged(function (user) {
+            if (user) { // if already logged in
+                window.location.href = 'index.html';
+            }
+        });
+
+        /*******************\
+         * init Login UI *
+        \*******************/
+
+        // FirebaseUI config.
+        var uiConfig = {
+            'signInSuccessUrl': false,
+            'signInOptions': [
+              // comment unused sign-in method
+              firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+              //firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+              //firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+              //firebase.auth.GithubAuthProvider.PROVIDER_ID,
+              firebase.auth.EmailAuthProvider.PROVIDER_ID
+            ],
+            // Terms of service url.
+            'tosUrl': false,
+        };
+
+        // Initialize the FirebaseUI Widget using Firebase.
+        var ui = new firebaseui.auth.AuthUI(firebase.auth());
+        // The start method will wait until the DOM is loaded.
+        ui.start('#firebaseui-auth-container', uiConfig);
+
+        ////////////////////////////////////////
+    </script>
+
+
+</body>
+
+</html>
+    
