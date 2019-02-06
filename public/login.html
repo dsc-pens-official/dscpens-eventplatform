@@ -7,80 +7,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>DSC PENS - Event Platform Login</title>
 
+  <!--Font CSS CDN   -->
   <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900|RobotoDraft:400,100,300,500,700,900'>
-  <!-- Bootstrap core CSS -->
-    <link href="asset/front/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-  <link rel="stylesheet" href="asset/front/css/style.css">
-    <link rel="stylesheet" href="login.css">
+  <!-- Bootstrap CDN -->
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <!--<link href="asset/front/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">-->
+
+  <!-- Custom CSS-->
+  <link rel="stylesheet" href="asset/front/css/style.css">
+  <link rel="stylesheet" href="login.css">
+  <!-- Firebase Auth -->
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/live/0.4/firebase-ui-auth.css" />
+
+
 </head>
 
+<!-- Start Header -->
 <body id="LoginForm">
 
-  <div class="container">
-      <hr>
-<h1 class="form-heading">Login</h1>
-      <hr>
-<div class="login-form">
-<div class="main-div">
-    <div class="panel">
+
+
+    <nav class="navbar sticky-top navbar-primary bg-light">
+        <a class="navbar-brand" href="#">
+            <i class="fab fa-google" style="color: #417df9;"></i> &nbsp
+            <span> DSC PENS Event Platform </span>
+        </a>
+    </nav>
+
+    <div class="container">
+
+<!--<h2 class="form-heading">Login Form</h2>-->
+        <hr>
+        <div class="login-form">
+        <div class="main-div">
+        <div class="panel">
 <!--   <h1>LOGIN</h1>-->
         <img  class="img-fluid mb-3 d-block mx-auto" width="200" height="200" src="dscpens.png" alt="">
    </div>
+
+<!-- END Header-->
+
     <form id="Login">
         <div id="firebaseui-auth-container"></div>
         <hr>
 
-<!--
-        <div class="form-group">
 
-
-            <input type="email" class="form-control" id="inputEmail" placeholder="Email Address">
-
-        </div>
-
-        <div class="form-group">
-
-            <input type="password" class="form-control" id="inputPassword" placeholder="Password">
-
-        </div>
-        <div class="forgot">
-        <a href="reset.html">Forgot password?</a>
-</div>
-        <button type="submit" class="btn btn-primary">Login</button>
--->
 
     </form>
-    </div>
-<p class="botto-text">DSC PENS</p>
-</div></div></div>
+    <!--  Menampilkan logo firebase -->
+    <span class="botto-firebase"><img src="https://firebase.google.com/downloads/brand-guidelines/SVG/logo-built_white.svg">  </span>
 
-<!-- Form Mixin-->
-<!-- Input Mixin-->
-<!-- Button Mixin-->
-<!-- Pen Title-->
-<!--
-<div class="pen-title">
-    
-  <h1>Go - Tour Login</h1><span>Login</span>
-</div>
--->
-<script src="asset/front/vendor/jquery/jquery.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+    </div> <!-- Close Panel -->
+
+    <span class="botto-text">Copyright &copy; DSC PENS 2019.</span>
+
+</div> <!-- Close main div-->
+    </div> <!-- Close Login form -->
+    </div><!-- Close Container -->
+
+
+    <script src="asset/front/vendor/jquery/jquery.min.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/5.7.1/firebase.js"></script>
+    <!-- JS CDN-->
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <!-- member plugins -->
     <script src="https://www.gstatic.com/firebasejs/ui/live/0.4/firebase-ui-auth.js"></script>
-    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/live/0.4/firebase-ui-auth.css" />
+
     <!-- End - member plugins -->
 
 
-<script src="https://www.gstatic.com/firebasejs/5.7.1/firebase.js"></script>
+
 <script>
   // Initialize Firebase
   var config = {
