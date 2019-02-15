@@ -1,0 +1,11 @@
+.card.card-statistic-2 .card-body {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    /* align-content: center; */
+}
+
+.media-body {
+    -ms-flex: 1;
+    flex: 1;
+    margin-top: 15px;
+}

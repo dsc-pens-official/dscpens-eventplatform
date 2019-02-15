@@ -1,287 +1,220 @@
+
 <!DOCTYPE html>
 <html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+  <title>Event Platform &mdash; DSC PENS</title>
 
-  <head>
+  <!-- General CSS Files -->
+  <link rel="stylesheet" href="asset_dua/modules/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="asset_dua/modules/fontawesome/css/all.min.css">
+  <!-- CSS Libraries -->
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+  <!-- Template CSS -->
+  <link rel="stylesheet" href="asset_dua/css/style.css">
+  <link rel="stylesheet" href="asset_dua/css/components.css">
 
-    <title>DSC PENS - Event Platform</title>
-      
-    <!-- Bootstrap Core CSS -->
-    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- custom -->
+  <link rel="stylesheet" href="asset_dua/custom/custom.css">
 
-    <!-- MetisMenu CSS -->
-    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+  <!-- favicon -->
+  <link rel="icon" href="asset_dua/custom/img/dsc.png" sizes="50x50" type="image/png">
 
-    <!-- Custom CSS -->
-    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+  <!-- Start GA -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-94034622-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-    <!-- Morris Charts CSS -->
-    <link href="../vendor/morrisjs/morris.css" rel="stylesheet">
+    gtag('config', 'UA-94034622-3');
+  </script>
+  <!-- /END GA -->
 
-    <!-- Custom Fonts -->
-    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="manifest" href="manifest.json">
 
-    <!-- Bootstrap core CSS -->
-    <link href="asset/front/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+</head>
 
-    <!-- Custom fonts for this template -->
-    <link href="asset/front/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-
-    <!-- Plugin CSS -->
-    <link href="asset/front/vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
-
-    <!-- Custom styles for this template -->
-    <link href="asset/front/css/freelancer.css" rel="stylesheet">
-
-    <link rel="manifest" href="manifest.json">
-
-  </head>
-
-  <body onload="getLocation()"> 
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
-      <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">DSC PENS - Event Platform</a>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-        </div>
-      </div>
-    </nav>
-
-    <!-- Header -->
-    <header id="page-top" class="masthead bg-primary text-white text-center">
-      <div class="container">
-        <img  class="img-fluid mb-3 d-block mx-auto" width="300" height="300" src="dscpens.png" alt="">
-        <h1 id="MyClockDisplay" class="text-uppercase mb-0"></h1>
-        <h6 id="demo" name="lokasi" ></h6>
-      </div>
-    </header>
-
-    <!-- Portfolio Grid Section -->
-    <section id="portfolio">
-      <div class="container" style="width: 100%!important;">
-        <h2 style="margin-bottom:40px!important;" class="text-center text-uppercase text-secondary mb-0">REDEEM POINT</h2>
-        <div class="row">
-          <div style="margin-bottom: 30px;" class="col-md-6 col-lg-4">
-            <div class="card" style="width: 18rem;">
-              <img class="card-img-top" src="dsc-bg.png" alt="Card image cap">
-              <div class="card-body">
-                <center>
-                  <h5 class="card-title">DSC PENS Pin</h5>
-                  <a href="#" data-toggle="modal" data-target="#pin" class="btn bg-secondary"><b>REDEEM</b></a>
-                </center>
-              </div>
+<body onload="getLocation()">
+  <div id="app">
+    <div class="main-wrapper main-wrapper-1">
+      <div class="navbar-bg"></div>
+      <nav class="navbar navbar-expand-lg main-navbar">
+        <form class="form-inline mr-auto">
+          <ul class="navbar-nav mr-3">
+            <img src="asset_dua/custom/img/dsc.png" width="8%" height="8%" class="mr-2 mt-2">
+            <span style="margin-top: 4px; font-size: 12px; color: white; font-weight: bold;">DCS PENS - EVENT PLATFORM</span> 
+          </ul>
+        </form>
+        <ul class="navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" data-toggle="dropdown" class="nav-link  nav-link-lg nav-link-user"><i class="fas fa-ellipsis-v"></i></a>
+            <div class="dropdown-menu dropdown-menu-right">
+              <!-- <div class="dropdown-title" id="email_text"></div> -->
+              <a href="" class="dropdown-item has-icon" data-toggle="modal" data-target="#modal-collect">
+                <i class="fas fa-gem"></i> Collect Points
+              </a>
+              <div class="dropdown-divider"></div>
+              <a href="#" class="dropdown-item has-icon text-danger" id="logout">
+                <i class="fas fa-sign-out-alt"></i> Logout
+              </a>
             </div>
+          </li>
+        </ul>
+      </nav>
+     <!--  <div class="main-sidebar sidebar-style-2">
+        <aside id="sidebar-wrapper">
+          <div class="sidebar-brand">
+            <a href="index.html">Event Platform</a>
           </div>
-
-          <div style="margin-bottom: 30px;" class="col-md-6 col-lg-4">
-            <div class="card" style="width: 18rem;">
-              <img class="card-img-top" src="dsc-bg.png" alt="Card image cap">
-              <div class="card-body">
-                  <center>
-                    <h5 class="card-title">DSC PENS Sticker</h5>
-                    <a href="#" data-toggle="modal" data-target="#sticker" class="btn bg-secondary"><b>REDEEM</b></a>
-                  </center>
-              </div>
-            </div>
+          <div class="sidebar-brand sidebar-brand-sm">
+            <a href="index.html">St</a>
           </div>
-
-          <div style="margin-bottom: 30px;" class="col-md-6 col-lg-4">
-            <div class="card" style="width: 18rem;">
-              <img class="card-img-top" src="dsc-bg.png" alt="Card image cap">
-              <div class="card-body">
-                  <center>
-                    <h5 class="card-title">DSC PENS Exlusive T-Shirt</h5>
-                    <a href="#" data-toggle="modal" data-target="#tshirt" class="btn bg-secondary"><b>REDEEM</b></a>
-                  </center>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-      
-      <nav class="navbar navbar-expand-lg bg-secondary fixed-bottom text-uppercase" id="mainNav">
-      <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-bottom"></a>
-        <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          Menu
-          <i class="fas fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-<!--
-            <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#dashboard">Dashboard</a>
-            </li>
--->
-            <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" data-toggle="modal" data-target="#profile">Profile</a>
-            </li><li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" data-toggle="modal" data-target="#absen">Collect Point</a>
-            </li>
-            <li class="nav-item mx-0 mx-lg-1">
-              <a href="#portfolio" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger">Redeem Point</a>
-            </li>
-            <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" id="logout">Logout</a>
+          <ul class="sidebar-menu">
+            <li class="menu-header">Dashboard</li>
+            <li class="dropdown">
+              <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Dashboard</span></a>
+              <ul class="dropdown-menu">
+                <li><a class="nav-link" href="index-0.html">General Dashboard</a></li>
+                <li><a class="nav-link" href="index.html">Ecommerce Dashboard</a></li>
+              </ul>
             </li>
           </ul>
-        </div>
-      </div>
-    </nav>
-
-
-      
-<!-- Modal Profile-->
-<div class="modal fade" id="profile" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <form id="collect_point" class="new_absen">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Profile</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-          <h6 id="email_text">Email : </h6>
-          <h6 id="point_text">Points : </h6> 
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
-      </div>
-        </div>
-    </form>
-  </div>
-</div>
-      
-
-<!-- Modal Absen-->
-<div class="modal fade" id="absen" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <form id="collect_point" class="new_absen">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Collect Poin</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-          <div class="form-group">
-            <label for="Status">Event Type</label>
-            <select class="form-control" id="status_collect">
-              <option value="workshop">Workshop</option>
-              <option value="showcase">Showcase</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="keterangan">Input token (DSC PENS Team)</label>
-            <input type="password" class="form-control" name="keterangan" id="keterangan_collect"></input>
-          </div>
-          <div class="form-group">
-            <input type="hidden" id="loc" class="loc" name="custId" value="">
-          </div>
-        
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">OK</button>
-      </div>
-        </div>
-    </form>
-  </div>
-</div>
-      
-
-<!-- Modal Izin-->
-<div class="modal fade" id="izin" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <form id="redeem_point" class="new_redeem">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Redeem Point</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-          <div class="form-group">
-            <label for="Status">Choose Item</label>
-            <select class="form-control" id="status_redeem">
-              <option value="pin">DSC PENS Pin</option>
-              <option value="stiker">DSC PENS Sticker</option>
-              <option value="kaos">DSC PENS Exclusive T-Shirt</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="keterangan">Input token (Panitia)</label>
-            <input type="password" class="form-control" name="keterangan" id="keterangan_redeem" rows="5"></input>
-          </div>
-          <div class="form-group">
-            <input type="hidden" id="loc1" class="loc" name="custId" value="">
-          </div>
-        
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">OK</button>
-        </div>
-        </div>
-    </form>
-  </div>
-</div>
-
-
-<!-- PIN MODAL -->
-<div class="modal fade" id="pin" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <form id="redeem_point" class="new_pin">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Redeem Point</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-            <div class="form-group">
-              <label for="keterangan">Input token (Panitia)</label>
-              <input type="password" class="form-control" name="keterangan" id="keterangan_pin" rows="5"></input>
+        </aside>
+      </div>-->
+      <!-- Main Content -->
+      <div class="main-content">
+        <section class="section">
+          
+          <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-12">
+              <div class="card card-statistic-2">
+                <div class="card-wrap">
+                  <div class="card-body text-center">
+                    <h4 id="MyClockDisplay" class="text-uppercase"></h4>
+                    <p id="demo" name="lokasi" ></p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="form-group">
-              <input type="hidden" id="redeemPin" value="pin">
-            </div>
+          </div>
+
+         <div class="summary-item">
+            <h6>Redeem point</h6>
+            <ul class="list-unstyled list-unstyled-border">
+              <li class="media">
+                <div class="media-body">
+                  <div class="media-right">
+                    <a href="" class="btn btn-primary" data-toggle="modal" data-target="#sticker">Redeem</a>
+                  </div>
+                  <div class="media-title">DSC PENS Sticker</div>
+                  <div class="text-muted text-small">Point redeem <div class="bullet"></div> 10 Points</div>
+                </div>
+              </li>
+              <li class="media">
+                <div class="media-body">
+                  <div class="media-right">
+                    <a href="" class="btn btn-primary" data-toggle="modal" data-target="#pin">Redeem</a>
+                  </div>
+                  <div class="media-title">DSC PENS Pin</div>
+                  <div class="text-muted text-small">Point redeem <div class="bullet"></div> 15 Points</div>
+                </div>
+              </li>
+              <li class="media">
+                <div class="media-body">
+                  <div class="media-right">
+                    <a href="" class="btn btn-primary" data-toggle="modal" data-target="#modal-gantungan">Redeem</a>
+                  </div>
+                  <div class="media-title">DSC PENS Gantungan Kunci</div>
+                  <div class="text-muted text-small">Point redeem <div class="bullet"></div> 15 Points</div>
+                </div>
+              </li>
+              <li class="media">
+                <div class="media-body">
+                 <div class="media-right">
+                    <a href="" class="btn btn-primary" data-toggle="modal" data-target="#tshirt">Redeem</a>
+                  </div>
+                  <div class="media-title">DSC PENS T-Shirt</div>
+                  <div class="text-muted text-small">Point redeem <div class="bullet"></div> 150 Points</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+        </section>
+      </div>
+
+      <!-- <footer class="main-footer">
+        <div class="footer-left">
+          Copyright &copy; 2018
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary">OK</button>
+        <div class="footer-right">
+          
+        </div>
+      </footer> -->
+
+       <div class="card" style="margin-bottom: 0px; position: fixed; bottom: 0; background-color: #6777ef; color: white; width: 100%;">
+          <div class="card-header" id="collect_point" class="new_absen">
+              <h6 id="email_text"></h6>
+              <div class="badge badge-pill badge-warning float-right ml-4" id="point_text"></div>
           </div>
-          </div>
-      </form>
+        </div>
+
     </div>
-</div>
+  </div>
 
-<!-- STICKER MODAL -->
-<div class="modal fade" id="sticker" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <form id="redeem_point" class="new_stiker">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Redeem Point</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+
+  <!-- Modal boostrap -->
+  <!-- COLLECT POINTS -->
+  <div class="modal fade" tabindex="-1" role="dialog" id="modal-collect">
+    <form id="collect_point" class="new_absen">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Collect Points</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="Status">Event Type</label>
+              <select class="form-control" id="status_collect">
+                <option value="workshop">Workshop</option>
+                <option value="showcase">Showcase</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="keterangan">Input token (DSC PENS Team)</label>
+              <input type="password" class="form-control" name="keterangan" id="keterangan_collect"></input>
+            </div>
+            <div class="form-group">
+              <input type="hidden" id="loc" class="loc" name="custId" value="">
+            </div>
+          </div>
+          <div class="modal-footer bg-whitesmoke br">
+            <button type="submit" class="btn btn-primary">Collect</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
         </div>
-        <div class="modal-body">
+    </div>
+    </form>
+  </div>
+
+
+  <!-- STICKER -->
+  <div class="modal fade" tabindex="-1" role="dialog" id="sticker">
+    <form id="redeem_point" class="new_stiker">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Redeem Point Sticker</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
             <div class="form-group">
               <label for="keterangan">Input token (Panitia)</label>
               <input type="password" class="form-control" name="keterangan" id="keterangan_sticker" rows="5"></input>
@@ -289,28 +222,83 @@
             <div class="form-group">
               <input type="hidden" id="redeemSticker" value="stiker">
             </div>
+          </div>
+          <div class="modal-footer bg-whitesmoke br">
+            <button type="submit" class="btn btn-primary">Redeem</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary">OK</button>
-          </div>
-          </div>
-      </form>
     </div>
-</div>
+    </form>
+  </div>
 
-<!-- TSHIRT MODAL -->
-<div class="modal fade" id="tshirt" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <form id="redeem_point" class="new_kaos">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Redeem Point</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+
+   <!-- GANTUNGAN -->
+  <div class="modal fade" tabindex="-1" role="dialog" id="modal-gantungan">
+    <!-- <form id="redeem_point" class="new_stiker"> -->
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Redeem Point Gantungan Kunci</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            lalalalalalallalalal
+          </div>
+          <div class="modal-footer bg-whitesmoke br">
+            <button type="submit" class="btn btn-primary">Redeem</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
         </div>
-        <div class="modal-body">
+    </div>
+    <!-- </form> -->
+  </div>
+
+
+  <!-- PIN -->
+  <div class="modal fade" tabindex="-1" role="dialog" id="pin">
+    <form id="redeem_point" class="new_pin">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Redeem Point Pin</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="keterangan">Input token (Panitia)</label>
+              <input type="password" class="form-control" name="keterangan" id="keterangan_pin" rows="5"></input>
+            </div>
+            <div class="form-group">
+              <input type="hidden" id="redeemPin" value="pin">
+            </div>
+          </div>
+          <div class="modal-footer bg-whitesmoke br">
+            <button type="submit" class="btn btn-primary">Redeem</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+    </div>
+    </form>
+  </div>
+
+
+  <!-- SHIRT -->
+  <div class="modal fade" tabindex="-1" role="dialog" id="tshirt">
+    <form id="redeem_point" class="new_kaos">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Redeem Point T-Shirt</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
             <div class="form-group">
               <label for="keterangan">Input token (Panitia)</label>
               <input type="password" class="form-control" name="keterangan" id="keterangan_kaos" rows="5"></input>
@@ -318,26 +306,36 @@
             <div class="form-group">
               <input type="hidden" id="redeemKaos" value="kaos">
             </div>
+          </div>
+          <div class="modal-footer bg-whitesmoke br">
+            <button type="submit" class="btn btn-primary">Redeem</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary">OK</button>
-          </div>
-          </div>
-      </form>
     </div>
-</div>
+    </form>
+  </div>
+  <!-- END: modal -->
 
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="asset/front/vendor/jquery/jquery.min.js"></script>
-    <script src="asset/front/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- General JS Scripts -->
+  <script src="asset_dua/modules/jquery.min.js"></script>
+  <script src="asset_dua/modules/popper.js"></script>
+  <script src="asset_dua/modules/tooltip.js"></script>
+  <script src="asset_dua/modules/bootstrap/js/bootstrap.min.js"></script>
+  <script src="asset_dua/modules/nicescroll/jquery.nicescroll.min.js"></script>
+  <script src="asset_dua/modules/moment.min.js"></script>
+  <script src="asset_dua/js/stisla.js"></script>
+  <!-- JS Libraies -->
 
-    <!-- Plugin JavaScript -->
-    <script src="asset/front/vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script src="asset/front/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
-    <script>
+  <!-- Page Specific JS File -->
+
+  <!-- Template JS File -->
+  <script src="asset_dua/js/scripts.js"></script>
+  <script src="asset_dua/js/custom.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+  <script>
       if('serviceWorker' in navigator) {
         navigator.serviceWorker.register('sw.js')
           .then(function() {
@@ -370,23 +368,20 @@
           });
       }
     </script>
-        
-<script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyBA9GF6vq0z5_qUWrVOUzaGy1P--ZqDQXM",
-    authDomain: "dscpens-event.firebaseapp.com",
-    databaseURL: "https://dscpens-event.firebaseio.com",
-    projectId: "dscpens-event",
-    storageBucket: "dscpens-event.appspot.com",
-    messagingSenderId: "980829139366"
-  };
-  firebase.initializeApp(config);
-</script>
-        
-<script src="user.js"></script>
-
+    <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyBA9GF6vq0z5_qUWrVOUzaGy1P--ZqDQXM",
+        authDomain: "dscpens-event.firebaseapp.com",
+        databaseURL: "https://dscpens-event.firebaseio.com",
+        projectId: "dscpens-event",
+        storageBucket: "dscpens-event.appspot.com",
+        messagingSenderId: "980829139366"
+      };
+      firebase.initializeApp(config);
+    </script>
+    <script src="user.js"></script>
     <script type="text/javascript">
         var tokenInput_collect;
         var tokenInput_redeem;
@@ -441,12 +436,12 @@
             if (user) {
             var point_data;
             user_email = firebase.auth().currentUser.email;
-             email_text.innerHTML = "Email : "+user_email;
+             email_text.innerHTML = user_email;
                     uid = firebase.auth().currentUser.uid;
             firebase.database().ref('users/'+uid).once('value')
                         .then(function(snapshot){
                 point_data = snapshot.val().point;
-             point_text.innerHTML = "Points : "+point_data;
+             point_text.innerHTML = "Points: " + point_data;
              });
                 var point_db;
                 var action = "";
@@ -627,7 +622,6 @@
                 });
 
     </script>
-   
     <script>
       
       /**********************\
@@ -772,11 +766,8 @@
     }
         showTime1();
     </script>
-    <script src="asset/front/js/jqBootstrapValidation.js"></script>
-    <script src="asset/front/js/contact_me.js"></script>
 
-    <script src="asset/front/js/freelancer.js"></script>
 
-  </body>
 
+</body>
 </html>
