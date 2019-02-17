@@ -201,6 +201,7 @@
               <label for="Status">Event Type</label>
               <select class="form-control" id="status_collect">
                 <option value="workshop">Workshop</option>
+                <option value="hackathon">Hackathon</option>
                 <option value="showcase">Showcase</option>
               </select>
             </div>
@@ -234,10 +235,17 @@
             </button>
           </div>
           <div class="modal-body">
+
+            <div class="form-group">
+              <label for="jumlah_sticker">Jumlah sticker (Panitia)</label>
+              <input type="number" class="form-control" name="jumlah_sticker" id="jumlah_sticker" rows="5"></input>
+            </div>
+
             <div class="form-group">
               <label for="keterangan">Input token (Panitia)</label>
               <input type="password" class="form-control" name="keterangan" id="keterangan_sticker" rows="5"></input>
             </div>
+
             <div class="form-group">
               <input type="hidden" id="redeemSticker" value="stiker">
             </div>
@@ -254,7 +262,7 @@
 
    <!-- GANTUNGAN -->
   <div class="modal fade" tabindex="-1" role="dialog" id="modal-gantungan">
-    <!-- <form id="redeem_point" class="new_stiker"> -->
+    <form id="redeem_point" class="new_gans">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -264,7 +272,21 @@
             </button>
           </div>
           <div class="modal-body">
-            lalalalalalallalalal
+
+            <div class="form-group">
+              <label for="jumlah_gans">Jumlah gantungan (Panitia)</label>
+              <input type="number" class="form-control" name="jumlah_gans" id="jumlah_gans" rows="5"></input>
+            </div>
+
+            <div class="form-group">
+              <label for="keterangan">Input token (Panitia)</label>
+              <input type="password" class="form-control" name="keterangan" id="keterangan_gans" rows="5"></input>
+            </div>
+
+            <div class="form-group">
+              <input type="hidden" id="redeemGans" value="gans">
+            </div>
+
           </div>
           <div class="modal-footer bg-whitesmoke br">
             <button type="submit" class="btn btn-primary">Redeem</button>
@@ -272,7 +294,7 @@
           </div>
         </div>
     </div>
-    <!-- </form> -->
+    </form>
   </div>
 
 
@@ -288,6 +310,12 @@
             </button>
           </div>
           <div class="modal-body">
+
+            <div class="form-group">
+              <label for="jumlah_pin">Jumlah pin (Panitia)</label>
+              <input type="number" class="form-control" name="jumlah_pin" id="jumlah_pin" rows="5"></input>
+            </div>
+
             <div class="form-group">
               <label for="keterangan">Input token (Panitia)</label>
               <input type="password" class="form-control" name="keterangan" id="keterangan_pin" rows="5"></input>
@@ -318,6 +346,12 @@
             </button>
           </div>
           <div class="modal-body">
+
+            <div class="form-group">
+              <label for="jumlah_tshirt">Jumlah tshirt (Panitia)</label>
+              <input type="number" class="form-control" name="jumlah_tshirt" id="jumlah_tshirt" rows="5"></input>
+            </div>
+
             <div class="form-group">
               <label for="keterangan">Input token (Panitia)</label>
               <input type="password" class="form-control" name="keterangan" id="keterangan_kaos" rows="5"></input>
@@ -383,7 +417,6 @@
 
               x.innerHTML = data.display_name;
               loc.value = data.display_name;
-              loc1.value = data.display_name;
           });
       }
     </script>
@@ -404,6 +437,7 @@
     <script type="text/javascript">
         var tokenInput_collect;
         var tokenInput_redeem;
+        var tokenInput_gans;
         var tokenInput_pin;
         var tokenInput_sticker;
         var tokenInput_kaos;
@@ -413,37 +447,49 @@
         var point_text;
         var user_email;
         var uid;
+        var rGans
         var rPin;
         var rSticker;
         var rKaos;
+        var jGans;
+        var jSticker;
+        var jPin;
+        var jKaos;
          document.addEventListener("DOMContentLoaded", function(){
              tokenInput_collect = document.getElementById("keterangan_collect");
              tokenInput_redeem = document.getElementById("keterangan_redeem");
+
+             tokenInput_gans = document.getElementById("keterangan_gans");
              tokenInput_pin = document.getElementById("keterangan_pin");
              tokenInput_sticker = document.getElementById("keterangan_sticker");
              tokenInput_kaos = document.getElementById("keterangan_kaos");
+
              status_collect = document.getElementById("status_collect");
              status_redeem = document.getElementById("status_redeem");
              email_text = document.getElementById("email_text");
              point_text = document.getElementById("point_text");
+
+             rGans = document.getElementById("redeemGans"); 
              rPin = document.getElementById("redeemPin");
              rSticker = document.getElementById("redeemSticker");
              rKaos = document.getElementById("redeemKaos");
+
+             jGans = document.getElementById("jumlah_gans");
+             jPin = document.getElementById("jumlah_pin");
+             jSticker = document.getElementById("jumlah_sticker");
+             jKaos = document.getElementById("jumlah_tshirt");
              token = [];
 //             });
         });
         
    firebase.database().ref('/list_token/showcase/').once('value').then(function(snapshot) {                      
                         snapshot.forEach(function(child){
-                            /* alert(child.val()); */
                             token.push(child.val())
                         });
-                        /* console.log(token[0].token); */
                         coll = token[0].token;
                         redm = token[1].token;
                         console.log(coll);
                         console.log(redm);
-                        /* alert(wks + shw); */
                     });
                            
 
@@ -460,7 +506,7 @@
             firebase.database().ref('users/'+uid).once('value')
                         .then(function(snapshot){
                 point_data = snapshot.val().point;
-             point_text.innerHTML = "Points: " + point_data;
+                point_text.innerHTML = "Points: " + point_data;
              });
                 var point_db;
                 var action = "";
@@ -473,6 +519,12 @@
                 
                 $('.new_pin').submit(function(e){
                     action = "pin";
+                    submitData();
+                    e.preventDefault();    
+                });
+
+                $('.new_gans').submit(function(e){
+                    action = "gans";
                     submitData();
                     e.preventDefault();    
                 });
@@ -549,16 +601,28 @@
                     
                     if(action == "collect"){
                       if(status_collect.value.toLowerCase() == "workshop" && tokenInput_collect.value.toLowerCase() == coll) {
-                        point_db = snapshot.val().point+5;
+                        point_db = snapshot.val().point+25;
+                        point_text.innerHTML = "Points: " + point_db;
                         alert("Poin Collection succeed.\nPoint : "+point_db);
                       }
                     
                       if(status_collect.value.toLowerCase() == "workshop" && tokenInput_collect.value.toLowerCase() != coll) {
                         alert("invalid token");
                       }
+
+                      if(status_collect.value.toLowerCase() == "hackathon" && tokenInput_collect.value.toLowerCase() == coll) {
+                        point_db = snapshot.val().point+30;
+                        point_text.innerHTML = "Points: " + point_db;
+                        alert("Poin Collection succeed.\nPoint : "+point_db);
+                      }         
+      
+                      if(status_collect.value.toLowerCase() == "hackathon" && tokenInput_collect.value.toLowerCase() != coll) {
+                        alert("invalid token");
+                      }
                     
                       if(status_collect.value.toLowerCase() == "showcase" && tokenInput_collect.value.toLowerCase() == coll) {
-                        point_db = snapshot.val().point+3;
+                        point_db = snapshot.val().point+20;
+                        point_text.innerHTML = "Points: " + point_db;
                         alert("Poin Collection succeed.\nPoint : "+point_db);
                       }         
       
@@ -568,10 +632,27 @@
                     
                     }
 
+                    if(action == "gans"){
+                      if(rGans.value.toLowerCase() == "gans" && tokenInput_gans.value.toLowerCase() == redm){
+                        point_db = snapshot.val().point - (jGans.value * 15);
+                        if(point_db >=0 ) {
+                          point_text.innerHTML = "Points: " + point_db;
+                          alert("Redeem succeed.\nPoint : "+point_db);
+                        }
+                        else{
+                          alert("Sorry you dont have enough point.\nNeed more "+point_db);
+                        }
+                      }
+                       
+                      if(rPin.value.toLowerCase() == "gans" && tokenInput_gans.value.toLowerCase() != redm)
+                        alert('invalid token');
+                    }
+
                     if(action == "pin"){
                       if(rPin.value.toLowerCase() == "pin" && tokenInput_pin.value.toLowerCase() == redm){
-                        point_db = snapshot.val().point-10;
+                        point_db = snapshot.val().point - (jPin.value * 15);
                         if(point_db >=0 ) {
+                          point_text.innerHTML = "Points: " + point_db;
                           alert("Redeem succeed.\nPoint : "+point_db);
                         }
                         else{
@@ -585,8 +666,9 @@
 
                     if(action == "stiker"){
                       if(rSticker.value.toLowerCase() == "stiker" && tokenInput_sticker.value.toLowerCase() == redm) {
-                        point_db = snapshot.val().point-7;
+                        point_db = snapshot.val().point - (jSticker.value * 10);
                         if(point_db >=0 ) {
+                          point_text.innerHTML = "Points: " + point_db;
                           alert("Redeem succeed.\nPoint : "+point_db);
                         }
                         else{
@@ -600,8 +682,9 @@
 
                     if(action == "kaos") {
                       if(rKaos.value.toLowerCase() == "kaos" && tokenInput_kaos.value.toLowerCase() == redm) {
-                        point_db = snapshot.val().point-50;
+                        point_db = snapshot.val().point - (jKaos.value * 150);
                         if(point_db >=0 ) {
+                          point_text.innerHTML = "Points: " + point_db;
                           alert("Redeem succeed.\nPoint : "+point_db);
                         }
                         else{
@@ -755,38 +838,6 @@
 
     startTime();
     </script>
-    <script type="text/javascript">
-      function showTime1(){
-        var date = new Date();
-        var h = date.getHours(); // 0 - 23
-        var m = date.getMinutes(); // 0 - 59
-        var s = date.getSeconds(); // 0 - 59
-        var session = "AM";
-        
-        if(h == 0){
-            h = 12;
-        }
-        
-        if(h > 12){
-            h = h - 12;
-            session = "PM";
-        }
-        
-        h = (h < 10) ? "0" + h : h;
-        m = (m < 10) ? "0" + m : m;
-        s = (s < 10) ? "0" + s : s;
-        
-        var time = h + ":" + m + ":" + s + " " + session;
-        document.getElementById("MyClockDisplay1").innerText = time;
-        document.getElementById("MyClockDisplay1").textContent = time;
-        
-        setTimeout(showTime1, 1000);
-        
-    }
-        showTime1();
-    </script>
-
-
 
 </body>
 </html>
