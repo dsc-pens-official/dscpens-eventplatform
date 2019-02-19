@@ -772,6 +772,41 @@
     }
         showTime1();
     </script>
+     <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+     <script>
+       // Initialize Firebase
+       var config = {
+         apiKey: "AIzaSyBA9GF6vq0z5_qUWrVOUzaGy1P--ZqDQXM",
+         authDomain: "dscpens-event.firebaseapp.com",
+         databaseURL: "https://dscpens-event.firebaseio.com",
+         projectId: "dscpens-event",
+         storageBucket: "dscpens-event.appspot.com",
+         messagingSenderId: "980829139366"
+       };
+       firebase.initializeApp(config);
+       const messaging = firebase.messaging();
+ messaging.setBackgroundMessageHandler(function(payload) {
+  const title = 'DSC PENS';
+  const options = {
+   body: payload.data.body
+  };
+  return self.registration.showNotification(title, options);
+ });
+     </script>
+    <script>
+      const messaging = firebase.messaging();
+      messaging.requestPermission()
+      .then(function() {
+        console.log('Notification permission granted.');
+        return messaging.getToken();
+      })
+      .then(function(token) {
+        console.log(token);
+      })
+      .catch(function(err) {
+        console.log('Unable to get permission to notify.', err);
+      })
+    </script>
     <script src="asset/front/js/jqBootstrapValidation.js"></script>
     <script src="asset/front/js/contact_me.js"></script>
 
