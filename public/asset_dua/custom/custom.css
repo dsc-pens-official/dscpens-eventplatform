@@ -9,3 +9,19 @@
     flex: 1;
     margin-top: 15px;
 }
+
+.main-content {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 80px;
+    width: 100%;
+    position: relative;
+}
+.navbar {
+    height: 70px;
+    left: 0px;
+    right: 5px;
+    position: absolute;
+    z-index: 890;
+    background-color: transparent;
+}
