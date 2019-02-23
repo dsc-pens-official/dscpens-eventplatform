@@ -25,3 +25,29 @@
     z-index: 890;
     background-color: transparent;
 }
+
+
+.lokasi {
+    font-size: 12px;
+    font-weight: 100;
+    line-height: 14px;
+}
+
+/* scan qr */
+.dropzone {
+    border: 2px dashed #6777ef;
+    min-height: 10px;
+    text-align: center;
+}
+.dropzone .dz-message {
+    font-size: 14px;
+    color: #34395e;
+    margin: 25px;
+}
+.dropzone .dz-message > input[type=file] {
+    position:absolute; 
+    overflow:hidden; 
+    width:1px; 
+    height:1px; 
+    opacity:0
+}

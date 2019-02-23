@@ -94,7 +94,7 @@
                 <div class="card-wrap">
                   <div class="card-body text-center">
                     <h4 id="MyClockDisplay" class="text-uppercase"></h4>
-                    <p id="demo" name="lokasi" ></p>
+                    <p class="lokasi" id="demo" name="lokasi" ></p>
                   </div>
                 </div>
               </div>
@@ -205,8 +205,16 @@
                 <option value="showcase">Showcase</option>
               </select>
             </div>
+
+
+            <div class="form-group dropzone dz-clickable" id="mydropzone">
+              <label class="dz-default dz-message">
+                <span>scan qr code</span>
+                <input type=file accept="image/*" capture=environment onclick="return showQRIntro();" onchange="openQRCamera(this);" tabindex=-1>
+              </label>
+            </div>
             <div class="form-group">
-              <label for="keterangan">Input token (DSC PENS Team)</label>
+              <label for="keterangan">atau input token (DSC PENS Team) pada kolom berikut :</label>
               <input type="password" class="form-control" name="keterangan" id="keterangan_collect"></input>
             </div>
             <div class="form-group">
@@ -386,6 +394,30 @@
   <!-- Template JS File -->
   <script src="asset_dua/js/scripts.js"></script>
   <script src="asset_dua/js/custom.js"></script>
+  <script>
+    function openQRCamera(node) {
+      var reader = new FileReader();
+      reader.onload = function() {
+        node.value = "";
+        qrcode.callback = function(res) {
+          if(res instanceof Error) {
+            alert("No QR code found. Please make sure the QR code is within the camera's frame and try again.");
+          } else {
+            node.parentNode.previousElementSibling.value = res;
+          }
+        };
+        qrcode.decode(reader.result);
+      };
+      reader.readAsDataURL(node.files[0]);
+    }
+
+    function showQRIntro() {
+      return confirm("Use your camera to take a picture of a QR code.");
+    }
+  </script>
+  <!-- END: Scan -->
+
+
 
   <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
   <script>
