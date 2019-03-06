@@ -18,8 +18,8 @@
   <!-- custom -->
   <link rel="stylesheet" href="asset_dua/custom/custom.css">
   <style>
-    body, input {
-      font-size:14pt
+    input {
+      font-size:12pt
     }
     input, label {
       vertical-align:middle
@@ -118,37 +118,22 @@
       <div class="main-content">
         <section class="section">
           
-          <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12">
-              <div class="card card-statistic-2">
-                <div class="card-wrap">
-                  <div class="card-body text-center">
-                    <h4 id="MyClockDisplay" class="text-uppercase"></h4>
-                    <p class="lokasi" id="demo" name="lokasi" ></p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
 
 
-          <div class="summary-item mb-5">
-            <ul class="list-unstyled list-unstyled-border">
-              <li class="media">
-                <div class="media-body">
-                  <div class="media-right">
-                    <p class="badge badge-pill badge-warning float-right" id="point_text"></p>
-                    <!-- <div class="badge badge-pill badge-warning float-right ml-4" id="point_text">100</div> -->
-                  </div>
-                  <div class="media-title" id="email_text"></div>
-                  <div class="text-muted text-small">your point</div>
-                </div>
-              </li>
-            </ul>
+          <div class="section-header__point">
+            <p id="email_text"></p> 
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <p class="badge badge-pill badge-warning" id="point_text"></p>
           </div>
 
 
 
+          <div class="section-header__gambar">
+            <img src="asset_dua/custom/img/banner.jpeg" width="100%">
+          </div>
+
+
+        
          <div class="summary-item mb-5">
             <h6>Redeem point</h6>
             <ul class="list-unstyled list-unstyled-border">
@@ -629,7 +614,7 @@
             firebase.database().ref('users/'+uid).once('value')
                         .then(function(snapshot){
                 point_data = snapshot.val().point;
-                point_text.innerHTML = "Points: " + point_data;
+                point_text.innerHTML = "Your points: " + point_data;
              });
                 var point_db;
                 var action = "";
