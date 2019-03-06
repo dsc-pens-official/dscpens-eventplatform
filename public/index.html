@@ -215,29 +215,17 @@
             <div class="form-group">
               <label for="Status">Event Type</label>
               <select class="form-control" id="status_collect">
-                <option value="workshop">Workshop</option>
+                <option value="workshop1">Campus Workshop 1</option>
+                <option value="workshop2">Campus Workshop 2</option>
+                <option value="workshop3">Campus Workshop 3</option>
                 <option value="hackathon">Hackathon</option>
                 <option value="showcase">Showcase</option>
               </select>
             </div>
-
-            
-                <!-- <input type=text size=16 placeholder="Tracking Code" class=qrcode-text>
-                <label class=qrcode-text-btn>
-                  <input type=file accept="image/*" capture=environment onclick="return showQRIntro();" onchange="openQRCamera(this);" tabindex=-1>
-                </label> 
-                <input type=button value="Go" disabled> -->
-
-
-            
-              <!-- <label class="dz-default dz-message">
-                <span>scan qr code</span>
-                <input type=file accept="image/*" capture=environment onclick="return showQRIntro();" onchange="openQRCamera(this);" tabindex=-1>
-              </label> -->
-              
+         
             <div class="form-group" >
               <label for="keterangan">Input token (DSC PENS Team) manually :</label>
-              <input type="text" size="12" class="qrcode-text form-control" name="keterangan" id="keterangan_collect">
+              <input type="password" size="12" class="qrcode-text form-control" name="keterangan" id="keterangan_collect">
               <label class="qrcode-text-btn dropzone dz-clickable" id="mydropzone">
                 <!-- <span>or scan qr code</span> --> 
                 <input type=file accept="image/*" capture="environment" onclick="return showQRIntro();" onchange="openQRCamera(this);" tabindex="-1" placeholder="or scan qr code">
@@ -260,10 +248,6 @@
     </div>
     </form>
   </div>
-
-
-
-
 
   <!-- STICKER -->
   <div class="modal fade" tabindex="-1" role="dialog" id="sticker">
@@ -543,6 +527,16 @@
     </script>
     <script src="user.js"></script>
     <script type="text/javascript">
+        var token_workshop1;
+        var token_workshop2;
+        var token_workshop3;
+        var token_codeathon;
+        var token_roadshowfinal;
+        var token_kaos;
+        var token_stiker;
+        var token_pin;
+        var token_gantungan;
+
         var tokenInput_collect;
         var tokenInput_redeem;
         var tokenInput_gans;
@@ -590,21 +584,34 @@
 //             });
         });
         
-   firebase.database().ref('/list_token/showcase/').once('value').then(function(snapshot) {                      
+   firebase.database().ref('/list_token/').once('value').then(function(snapshot) {                      
                         snapshot.forEach(function(child){
                             token.push(child.val())
                         });
-                        coll = token[0].token;
-                        redm = token[1].token;
+                        var list = token;
+                        token_workshop1 = token[0].token;
+                        token_workshop2 = token[1].token;
+                        token_workshop3 = token[2].token;
+                        token_codeathon = token[3].token;
+                        token_roadshowfinal = token[4].token;
+                        token_kaos = token[5].token;
+                        token_stiker = token[6].token;
+                        token_pin = token[7].token;
+                        token_gantungan = token[8].token;
+
+                        console.log(list);
+                        /* coll = token[0].token;
+                        redm = token[1].token; */
                         /* console.log(coll);
                         console.log(redm); */
                     });
                            
 
-//        for(var i=0;i<10;i++){
-//              generateTokenWorkshop();
-//            generateTokenShowcase();
-//          }
+       /* for(var i=0;i<8;i++){
+             //generateTokenWorkshop();
+           //generateTokenShowcase();
+           //generateTokenWorshop1();
+         } */
       firebase.auth().onAuthStateChanged(function (user) {
             if (user) {
             var point_data;
@@ -708,40 +715,60 @@
                      //   alert(status_collect.value.toLowerCase());
                     
                     if(action == "collect"){
-                      if(status_collect.value.toLowerCase() == "workshop" && tokenInput_collect.value.toLowerCase() == coll) {
-                        point_db = snapshot.val().point+25;
+                      if(status_collect.value.toLowerCase() == "workshop1" && tokenInput_collect.value.toLowerCase() == token_workshop1) {
+                        point_db = snapshot.val().point+30;
                         point_text.innerHTML = "Points: " + point_db;
                         alert("Poin Collection succeed.\nPoint : "+point_db);
                       }
                     
-                      if(status_collect.value.toLowerCase() == "workshop" && tokenInput_collect.value.toLowerCase() != coll) {
+                      if(status_collect.value.toLowerCase() == "workshop1" && tokenInput_collect.value.toLowerCase() != token_workshop1) {
                         alert("invalid token");
                       }
 
-                      if(status_collect.value.toLowerCase() == "hackathon" && tokenInput_collect.value.toLowerCase() == coll) {
+                      if(status_collect.value.toLowerCase() == "workshop2" && tokenInput_collect.value.toLowerCase() == token_workshop2) {
+                        point_db = snapshot.val().point+30;
+                        point_text.innerHTML = "Points: " + point_db;
+                        alert("Poin Collection succeed.\nPoint : "+point_db);
+                      }
+                    
+                      if(status_collect.value.toLowerCase() == "workshop2" && tokenInput_collect.value.toLowerCase() != token_workshop2) {
+                        alert("invalid token");
+                      }
+
+                      if(status_collect.value.toLowerCase() == "workshop3" && tokenInput_collect.value.toLowerCase() == token_workshop3) {
+                        point_db = snapshot.val().point+40;
+                        point_text.innerHTML = "Points: " + point_db;
+                        alert("Poin Collection succeed.\nPoint : "+point_db);
+                      }
+                    
+                      if(status_collect.value.toLowerCase() == "workshop3" && tokenInput_collect.value.toLowerCase() != token_workshop3) {
+                        alert("invalid token");
+                      }
+
+                      if(status_collect.value.toLowerCase() == "hackathon" && tokenInput_collect.value.toLowerCase() == token_codeathon) {
                         point_db = snapshot.val().point+30;
                         point_text.innerHTML = "Points: " + point_db;
                         alert("Poin Collection succeed.\nPoint : "+point_db);
                       }         
       
-                      if(status_collect.value.toLowerCase() == "hackathon" && tokenInput_collect.value.toLowerCase() != coll) {
+                      if(status_collect.value.toLowerCase() == "hackathon" && tokenInput_collect.value.toLowerCase() != token_codeathon) {
                         alert("invalid token");
                       }
                     
-                      if(status_collect.value.toLowerCase() == "showcase" && tokenInput_collect.value.toLowerCase() == coll) {
+                      if(status_collect.value.toLowerCase() == "showcase" && tokenInput_collect.value.toLowerCase() == token_roadshowfinal) {
                         point_db = snapshot.val().point+20;
                         point_text.innerHTML = "Points: " + point_db;
                         alert("Poin Collection succeed.\nPoint : "+point_db);
                       }         
       
-                      if(status_collect.value.toLowerCase() == "showcase" && tokenInput_collect.value.toLowerCase() != coll) {
+                      if(status_collect.value.toLowerCase() == "showcase" && tokenInput_collect.value.toLowerCase() != token_roadshowfinal) {
                         alert("invalid token");
                       }
                     
                     }
 
                     if(action == "gans"){
-                      if(rGans.value.toLowerCase() == "gans" && tokenInput_gans.value.toLowerCase() == redm){
+                      if(rGans.value.toLowerCase() == "gans" && tokenInput_gans.value.toLowerCase() == token_gantungan){
                         point_db = snapshot.val().point - (jGans.value * 15);
                         if(point_db >=0 ) {
                           point_text.innerHTML = "Points: " + point_db;
@@ -752,12 +779,12 @@
                         }
                       }
                        
-                      if(rPin.value.toLowerCase() == "gans" && tokenInput_gans.value.toLowerCase() != redm)
+                      if(rPin.value.toLowerCase() == "gans" && tokenInput_gans.value.toLowerCase() != token_gantungan)
                         alert('invalid token');
                     }
 
                     if(action == "pin"){
-                      if(rPin.value.toLowerCase() == "pin" && tokenInput_pin.value.toLowerCase() == redm){
+                      if(rPin.value.toLowerCase() == "pin" && tokenInput_pin.value.toLowerCase() == token_pin){
                         point_db = snapshot.val().point - (jPin.value * 15);
                         if(point_db >=0 ) {
                           point_text.innerHTML = "Points: " + point_db;
@@ -768,12 +795,12 @@
                         }
                       }
                        
-                      if(rPin.value.toLowerCase() == "pin" && tokenInput_pin.value.toLowerCase() != redm)
+                      if(rPin.value.toLowerCase() == "pin" && tokenInput_pin.value.toLowerCase() != token_pin)
                         alert('invalid token');
                     }
 
                     if(action == "stiker"){
-                      if(rSticker.value.toLowerCase() == "stiker" && tokenInput_sticker.value.toLowerCase() == redm) {
+                      if(rSticker.value.toLowerCase() == "stiker" && tokenInput_sticker.value.toLowerCase() == token_stiker) {
                         point_db = snapshot.val().point - (jSticker.value * 10);
                         if(point_db >=0 ) {
                           point_text.innerHTML = "Points: " + point_db;
@@ -784,12 +811,12 @@
                         }
                       }
                         
-                      if(rSticker.value.toLowerCase() == "stiker" && tokenInput_sticker.value.toLowerCase() != redm)
+                      if(rSticker.value.toLowerCase() == "stiker" && tokenInput_sticker.value.toLowerCase() != token_stiker)
                         alert('invalid token');
                     }
 
                     if(action == "kaos") {
-                      if(rKaos.value.toLowerCase() == "kaos" && tokenInput_kaos.value.toLowerCase() == redm) {
+                      if(rKaos.value.toLowerCase() == "kaos" && tokenInput_kaos.value.toLowerCase() == token_kaos) {
                         point_db = snapshot.val().point - (jKaos.value * 150);
                         if(point_db >=0 ) {
                           point_text.innerHTML = "Points: " + point_db;
@@ -800,7 +827,7 @@
                         }
                       }
                         
-                      if(rKaos.value.toLowerCase() == "kaos" && tokenInput_kaos.value.toLowerCase() != redm)
+                      if(rKaos.value.toLowerCase() == "kaos" && tokenInput_kaos.value.toLowerCase() != token_kaos)
                         alert('invalid token');
                     }
                         if(point_db >=0 ){
