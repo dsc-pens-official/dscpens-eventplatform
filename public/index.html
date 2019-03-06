@@ -73,9 +73,13 @@
       <nav class="navbar navbar-expand-lg main-navbar">
         <form class="form-inline mr-auto">
           <ul class="navbar-nav mr-3">
-            <li><a href="#" class="nav-link nav-link-lg"><img src="asset_dua/custom/img/dsc.png" width="22px"></a></li>
+            <li>
+              <a href="#" class="nav-link nav-link-lg">
+                <img src="asset_dua/custom/img/dsc.png" width="35px" style="padding-top: 5px;">
+              </a>
+            </li>
             <!-- <img src="asset_dua/custom/img/dsc.png" width="8%" height="8%" class="mr-2 mt-2"> -->
-            <span style="margin-top: 4px; font-size: 12px; color: white; font-weight: bold;">DCS PENS - EVENT PLATFORM</span> 
+            <span style="padding-top: 8px; font-size: 13px; color: white; font-weight: bold;">DCS PENS - EVENT PLATFORM</span> 
           </ul>
         </form>
         <ul class="navbar-nav navbar-right">
@@ -94,52 +98,46 @@
           </li>
         </ul>
       </nav>
-     <!--   <div class="main-sidebar sidebar-style-2">
-        <aside id="sidebar-wrapper">
-          <div class="sidebar-brand">
-            <a href="index.html">Event Platform</a>
-          </div>
-          <div class="sidebar-brand sidebar-brand-sm">
-            <a href="index.html">St</a>
-          </div>
-          <ul class="sidebar-menu">
-            <li class="menu-header">Dashboard</li>
-            <li class="dropdown">
-              <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Dashboard</span></a>
-              <ul class="dropdown-menu">
-                <li><a class="nav-link" href="index-0.html">General Dashboard</a></li>
-                <li><a class="nav-link" href="index.html">Ecommerce Dashboard</a></li>
-              </ul>
-            </li>
-          </ul>
-        </aside>
-      </div> -->
       <!-- Main Content -->
       <div class="main-content">
         <section class="section">
           
 
-
-          <div class="section-header__point">
-            <p id="email_text"></p> 
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <p class="badge badge-pill badge-warning" id="point_text"></p>
-          </div>
-
-
-
           <div class="section-header__gambar">
-            <img src="asset_dua/custom/img/banner.jpeg" width="100%">
+            <a href="asset_dua/custom/img/banner.jpeg" class="chocolat-image" style="text-decoration: none;">
+              <div>
+                <img src="asset_dua/custom/img/banner.jpeg" class="img-fluid">
+                <p class="text-center text-default">The next event DSC Pens Campus Roadshow</p>
+              </div>
+            </a>
           </div>
 
 
-        
-         <div class="summary-item mb-5">
-            <h6>Redeem point</h6>
+          <div class="summary-item mb-3">
             <ul class="list-unstyled list-unstyled-border">
               <li class="media">
                 <div class="media-body">
                   <div class="media-right">
+                    <p class="badge badge-pill badge-warning" id="point_text"></p>
+                    <!-- <a href="" class="btn btn-primary" data-toggle="modal" data-target="#sticker">Redeem</a> -->
+                  </div>
+                  <div class="media-title" id="email_text"></div>
+                  <div class="text-muted text-small">Your account </div>
+                </div>
+              </li>
+            </ul>
+            <hr>
+          </div>
+          
+
+
+         <div class="summary-item mb-5">
+            <h6>Redeem point</h6>
+            <ul class="list-unstyled list-unstyled-border">
+              <li class="media">
+                <img class="mr-3 mt-2 rounded" width="50" src="asset_dua/custom/img/redeem/sticker.jpeg" alt="avatar">
+                <div class="media-body">
+                  <div class="float-right text-primary">
                     <a href="" class="btn btn-primary" data-toggle="modal" data-target="#sticker">Redeem</a>
                   </div>
                   <div class="media-title">DSC PENS Sticker</div>
@@ -147,8 +145,9 @@
                 </div>
               </li>
               <li class="media">
+                <img class="mr-3 mt-2 rounded" width="50" src="asset_dua/custom/img/redeem/pin.jpeg" alt="avatar">
                 <div class="media-body">
-                  <div class="media-right">
+                  <div class="float-right text-primary">
                     <a href="" class="btn btn-primary" data-toggle="modal" data-target="#pin">Redeem</a>
                   </div>
                   <div class="media-title">DSC PENS Pin</div>
@@ -156,23 +155,27 @@
                 </div>
               </li>
               <li class="media">
+                <img class="mr-3 mt-2 rounded" width="50" src="asset_dua/custom/img/redeem/keychain.jpeg" alt="avatar">
                 <div class="media-body">
-                  <div class="media-right">
+                  <div class="float-right text-primary">
                     <a href="" class="btn btn-primary" data-toggle="modal" data-target="#modal-gantungan">Redeem</a>
                   </div>
-                  <div class="media-title">DSC PENS Gantungan Kunci</div>
+                  <div class="media-title">DSC PENS Keychain</div>
                   <div class="text-muted text-small">Point redeem <div class="bullet"></div> 15 Points</div>
                 </div>
               </li>
               <li class="media">
+                <img class="mr-3 mt-2 rounded" width="50" src="asset_dua/custom/img/redeem/shirt.jpeg" alt="avatar">
                 <div class="media-body">
-                 <div class="media-right">
+                  <div class="float-right text-primary">
                     <a href="" class="btn btn-primary" data-toggle="modal" data-target="#tshirt">Redeem</a>
                   </div>
-                  <div class="media-title">DSC PENS T-Shirt</div>
+                  <div class="media-title">DSC PENS Keychain</div>
                   <div class="text-muted text-small">Point redeem <div class="bullet"></div> 150 Points</div>
                 </div>
               </li>
+
+
             </ul>
           </div>
 
@@ -304,7 +307,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">Redeem Point Gantungan Kunci</h5>
+            <h5 class="modal-title">Redeem Point Keychain</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
