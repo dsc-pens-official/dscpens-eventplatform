@@ -243,7 +243,7 @@
             </div>
           </div>
           <div class="modal-footer bg-whitesmoke br">
-            <button type="submit" class="btn btn-primary">Collect</button>
+            <button type="submit" id="redeembtn" class="btn btn-primary redeembtn">Collect</button>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           </div>
         </div>
@@ -322,7 +322,7 @@
               <label for="keterangan">Input token (Panitia)</label>
               <input type="password" class="form-control" name="keterangan" id="keterangan_gans" rows="5"></input>
             </div> -->
-
+        
             <div class="form-group" >
               <label for="keterangan">Input token (Panitia) manually :</label>
               <input type="password" size="12" class="qrcode-text form-control" name="keterangan" id="keterangan_gans">
@@ -338,7 +338,7 @@
 
           </div>
           <div class="modal-footer bg-whitesmoke br">
-            <button type="submit" class="btn btn-primary">Redeem</button>
+            <button type="submit" class="btn btn-primary redeembtn">Redeem</button>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           </div>
         </div>
@@ -539,6 +539,8 @@
         var token_pin;
         var token_gantungan;
 
+        var redeemBtn;
+
         var tokenInput_collect;
         var tokenInput_redeem;
         var tokenInput_gans;
@@ -560,6 +562,8 @@
         var jPin;
         var jKaos;
          document.addEventListener("DOMContentLoaded", function(){
+            
+             redeemBtn = document.getElementById("redeembtn");
              tokenInput_collect = document.getElementById("keterangan_collect");
              tokenInput_redeem = document.getElementById("keterangan_redeem");
 
@@ -628,6 +632,9 @@
                 var trans_status = false;
                 $('.new_absen').submit(function(e){
                     action = "collect";
+                    redeemBtn.disabled = true;
+                    redeemBtn.innerHTML = "Colecting...";
+
                     submitData();
                     e.preventDefault();    
                 });
@@ -719,50 +726,65 @@
                         point_db = snapshot.val().point+30;
                         point_text.innerHTML = "Points: " + point_db;
                         alert("Poin Collection succeed.\nPoint : "+point_db);
+                        redeemBtn.innerHTML = "Success";
                       }
                     
                       if(status_collect.value.toLowerCase() == "workshop1" && tokenInput_collect.value.toLowerCase() != token_workshop1) {
                         alert("invalid token");
+                        redeemBtn.innerHTML = "try again";
+                        redeemBtn.disabled = false;
                       }
 
                       if(status_collect.value.toLowerCase() == "workshop2" && tokenInput_collect.value.toLowerCase() == token_workshop2) {
                         point_db = snapshot.val().point+30;
                         point_text.innerHTML = "Points: " + point_db;
                         alert("Poin Collection succeed.\nPoint : "+point_db);
+                        redeemBtn.innerHTML = "Success";
                       }
                     
                       if(status_collect.value.toLowerCase() == "workshop2" && tokenInput_collect.value.toLowerCase() != token_workshop2) {
                         alert("invalid token");
+                        redeemBtn.innerHTML = "try again";
+                        redeemBtn.disabled = false;
                       }
 
                       if(status_collect.value.toLowerCase() == "workshop3" && tokenInput_collect.value.toLowerCase() == token_workshop3) {
                         point_db = snapshot.val().point+40;
                         point_text.innerHTML = "Points: " + point_db;
                         alert("Poin Collection succeed.\nPoint : "+point_db);
+                        redeemBtn.innerHTML = "Success";
                       }
                     
                       if(status_collect.value.toLowerCase() == "workshop3" && tokenInput_collect.value.toLowerCase() != token_workshop3) {
                         alert("invalid token");
+                        redeemBtn.innerHTML = "try again";
+                        redeemBtn.disabled = false;
                       }
 
                       if(status_collect.value.toLowerCase() == "hackathon" && tokenInput_collect.value.toLowerCase() == token_codeathon) {
                         point_db = snapshot.val().point+30;
                         point_text.innerHTML = "Points: " + point_db;
                         alert("Poin Collection succeed.\nPoint : "+point_db);
+                        redeemBtn.innerHTML = "Success";
                       }         
       
                       if(status_collect.value.toLowerCase() == "hackathon" && tokenInput_collect.value.toLowerCase() != token_codeathon) {
                         alert("invalid token");
+                        redeemBtn.innerHTML = "try again";
+                        redeemBtn.disabled = false;
                       }
                     
                       if(status_collect.value.toLowerCase() == "showcase" && tokenInput_collect.value.toLowerCase() == token_roadshowfinal) {
                         point_db = snapshot.val().point+20;
                         point_text.innerHTML = "Points: " + point_db;
                         alert("Poin Collection succeed.\nPoint : "+point_db);
+                        redeemBtn.innerHTML = "Success";
                       }         
       
                       if(status_collect.value.toLowerCase() == "showcase" && tokenInput_collect.value.toLowerCase() != token_roadshowfinal) {
                         alert("invalid token");
+                        redeemBtn.innerHTML = "try again";
+                        redeemBtn.disabled = false;
                       }
                     
                     }
