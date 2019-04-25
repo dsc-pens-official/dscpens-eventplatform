@@ -8,7 +8,12 @@
   <!-- General CSS Files -->
   <link rel="stylesheet" href="asset_dua/modules/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="asset_dua/modules/fontawesome/css/all.min.css">
+  
   <!-- CSS Libraries -->
+  <link rel="stylesheet" href="asset_dua/modules/jqvmap/dist/jqvmap.min.css">
+  <link rel="stylesheet" href="asset_dua/modules/summernote/summernote-bs4.css">
+  <link rel="stylesheet" href="asset_dua/modules/owlcarousel2/dist/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="asset_dua/modules/owlcarousel2/dist/assets/owl.theme.default.min.css">
 
   <!-- Template CSS -->
   <link rel="stylesheet" href="asset_dua/css/style.css">
@@ -61,6 +66,10 @@
   </script>
   <!-- /END GA -->
 
+  <!-- fancybox -->
+  <link href="asset_dua/fancybox/dist/jquery.fancybox.css" rel="stylesheet" type="text/css" media="screen" />
+
+
   <link rel="manifest" href="manifest.json">
 
 </head>
@@ -86,9 +95,12 @@
             <a href="#" data-toggle="dropdown" class="nav-link  nav-link-lg nav-link-user"><i class="fas fa-ellipsis-v"></i></a>
             <div class="dropdown-menu dropdown-menu-right">
               <!-- <div class="dropdown-title" id="email_text"></div> -->
-              <a href="" class="dropdown-item has-icon" data-toggle="modal" data-target="#modal-collect">
-                <i class="fas fa-gem"></i> Collect Points
+              <a href="#redeem_section" class="dropdown-item has-icon" >
+                <i class="fas fa-gem"></i> Redeem Points
               </a>
+              <!-- <a href="" class="dropdown-item has-icon" data-toggle="modal" data-target="#modal-collect">
+                <i class="fas fa-gem"></i> Collect Points
+              </a> -->
               <div class="dropdown-divider"></div>
               <a href="#" class="dropdown-item has-icon text-danger" id="logout">
                 <i class="fas fa-sign-out-alt"></i> Logout
@@ -103,11 +115,9 @@
           
 
           <div class="section-header__gambar">
-            <a href="asset_dua/custom/img/banner.jpeg" class="chocolat-image" style="text-decoration: none; width: 100%;">
-              <div>
-                <img src="asset_dua/custom/img/banner.jpeg" class="img-fluid">
+            <a href="asset_dua/custom/img/banner.jpeg" target="_blank" class="chocolat-image fancybox fancybox-effects-a" data-fancybox="file" style="text-decoration: none; width: 100%;">
+                <img src="asset_dua/custom/img/banner.jpeg" class="img" style="width: 100%">
                 <p class="text-center text-default">The next event DSC Pens Campus Roadshow</p>
-              </div>
             </a>
           </div>
 
@@ -127,56 +137,250 @@
             </ul>
             <hr>
           </div>
+        
+
           
 
+          <!-- redeem point -->
+          <div class="row">
+            <div class="col-md-6">
+              <div class="card">
+                <div class="card-header">
+                  <h4>Redeem points</h4>
+                </div>
+                <div class="card-body">
+                  <div class="owl-carousel owl-theme" id="products-carousel">
+                    
+                    <div>
+                      <div class="product-item pb-3">
+                        <div class="product-image">
+                          <a href="asset_dua/custom/img/redeem/sticker.jpeg" target="_blank" class="fancybox fancybox-effects-a" data-fancybox="file">
+                            <img class="img-fluid" width="50" src="asset_dua/custom/img/redeem/sticker.jpeg" alt="avatar">
+                          </a>
+                        </div>
+                        <div class="product-details">
+                          <div class="product-name">DSC PENS Sticker</div>
+                          <div class="text-muted text-small">10 Point</div>
+                          <div class="product-cta">
+                            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#sticker">Redeem</a>
+                          </div>
+                        </div>  
+                      </div>
+                    </div>
+                    <div>
+                      <div class="product-item pb-3">
+                        <div class="product-image">
+                          <a href="asset_dua/custom/img/redeem/pin.jpeg" target="_blank" class="fancybox fancybox-effects-a" data-fancybox="file">
+                            <img class="img-fluid" width="50" src="asset_dua/custom/img/redeem/pin.jpeg" alt="avatar">
+                          </a>
+                        </div>
+                        <div class="product-details">
+                          <div class="product-name">DSC PENS Pin</div>
+                          <div class="text-muted text-small">15 Point</div>
+                          <div class="product-cta">
+                            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#pin">Redeem</a>
+                          </div>
+                        </div>  
+                      </div>
+                    </div>
+                    <div>
+                      <div class="product-item pb-3">
+                        <div class="product-image">
+                          <a href="asset_dua/custom/img/redeem/keychain.jpeg" target="_blank" class="fancybox fancybox-effects-a" data-fancybox="file">
+                            <img class="img-fluid" width="50" src="asset_dua/custom/img/redeem/keychain.jpeg" alt="avatar">
+                          </a>
+                        </div>
+                        <div class="product-details">
+                          <div class="product-name">DSC PENS Keychain</div>
+                          <div class="text-muted text-small">15 Point</div>
+                          <div class="product-cta">
+                            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modal-gantungan">Redeem</a>
+                          </div>
+                        </div>  
+                      </div>
+                    </div>
+                    <div>
+                      <div class="product-item pb-3">
+                        <div class="product-image">
+                          <a href="asset_dua/custom/img/redeem/shirt.jpeg" target="_blank" class="fancybox fancybox-effects-a" data-fancybox="file">
+                            <img class="img-fluid" width="50" src="asset_dua/custom/img/redeem/shirt.jpeg" alt="avatar">
+                          </a>
+                        </div>
+                        <div class="product-details">
+                          <div class="product-name">DSC PENS T-shirt</div>
+                          <div class="text-muted text-small">15 Point</div>
+                          <div class="product-cta">
+                            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#tshirt">Redeem</a>
+                          </div>
+                        </div>  
+                      </div>
+                    </div>
 
-         <div class="summary-item mb-5">
-            <h6>Redeem point</h6>
-            <ul class="list-unstyled list-unstyled-border">
-              <li class="media">
-                <img class="mr-3 mt-2 rounded" width="50" src="asset_dua/custom/img/redeem/sticker.jpeg" alt="avatar">
-                <div class="media-body">
-                  <div class="float-right text-primary">
-                    <a href="" class="btn btn-primary" data-toggle="modal" data-target="#sticker">Redeem</a>
                   </div>
-                  <div class="media-title">DSC PENS Sticker</div>
-                  <div class="text-muted text-small">Point redeem <div class="bullet"></div> 10 Points</div>
                 </div>
-              </li>
-              <li class="media">
-                <img class="mr-3 mt-2 rounded" width="50" src="asset_dua/custom/img/redeem/pin.jpeg" alt="avatar">
-                <div class="media-body">
-                  <div class="float-right text-primary">
-                    <a href="" class="btn btn-primary" data-toggle="modal" data-target="#pin">Redeem</a>
-                  </div>
-                  <div class="media-title">DSC PENS Pin</div>
-                  <div class="text-muted text-small">Point redeem <div class="bullet"></div> 15 Points</div>
-                </div>
-              </li>
-              <li class="media">
-                <img class="mr-3 mt-2 rounded" width="50" src="asset_dua/custom/img/redeem/keychain.jpeg" alt="avatar">
-                <div class="media-body">
-                  <div class="float-right text-primary">
-                    <a href="" class="btn btn-primary" data-toggle="modal" data-target="#modal-gantungan">Redeem</a>
-                  </div>
-                  <div class="media-title">DSC PENS Keychain</div>
-                  <div class="text-muted text-small">Point redeem <div class="bullet"></div> 15 Points</div>
-                </div>
-              </li>
-              <li class="media">
-                <img class="mr-3 mt-2 rounded" width="50" src="asset_dua/custom/img/redeem/shirt.jpeg" alt="avatar">
-                <div class="media-body">
-                  <div class="float-right text-primary">
-                    <a href="" class="btn btn-primary" data-toggle="modal" data-target="#tshirt">Redeem</a>
-                  </div>
-                  <div class="media-title">DSC PENS T-shirt</div>
-                  <div class="text-muted text-small">Point redeem <div class="bullet"></div> 150 Points</div>
-                </div>
-              </li>
-
-
-            </ul>
+              </div>
+            </div>
           </div>
+          <!-- end redeem point -->
+
+
+
+          <!-- list event -->
+          <div class="row mt-4">
+          <div class="col-12">
+            <article class="article article-style-b">
+              <div class="article-header">
+                <a href="asset_dua/custom/img/event/award.jpeg" target="_blank" class="fancybox fancybox-effects-a" data-fancybox="file">
+                  <div class="article-image" data-background="asset_dua/custom/img/event/award.jpeg"></div>
+                </a>
+                <div class="article-badge">
+                  <div class="article-badge-item badge-primary"><i class="fas fa-fire"></i> Event Active</div>
+                </div>
+              </div>
+              <div class="article-details">
+                <div class="article-category">
+                  Multifunction Hall Lt.1 BG Junction Mall Surabaya
+                  <div class="bullet"></div> 28 April 2019
+                </div>
+                <div class="article-title">
+                  <h2><a href="#">Seminar, Showcase & Awarding</a></h2>
+                </div>
+                <!-- <p>Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. </p> -->
+                <div class="article-cta">
+                  <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#modal-collect">Registration</a>
+                </div>
+              </div>
+            </article>
+          </div>
+          </div>
+
+
+          <div class="row">
+          <div class="col-12">
+            <article class="article article-style-b">
+              <div class="article-header">
+                <a href="asset_dua/custom/img/event/hackathon.jpeg" target="_blank" class="fancybox fancybox-effects-a" data-fancybox="file">
+                  <div class="article-image" data-background="asset_dua/custom/img/event/hackathon.jpeg"></div>
+                </a>
+                <div class="article-badge">
+                  <div class="article-badge-item bg-danger"><i class="fas fa-fire"></i> Event Closed</div>
+                </div>
+              </div>
+              <div class="article-details">
+                <div class="article-category">
+                  Dilo Surabaya
+                  <div class="bullet"></div> 20-21  April 2019
+                </div>
+                <div class="article-title">
+                  <h2><a href="#">International Hackathon Codeathon</a></h2>
+                </div>
+                <!-- <p>Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. </p> -->
+                <div class="article-cta">
+                  <!-- <a href="#" class="btn disabled btn-warning" data-toggle="modal" data-target="#modal-hackathon">Registration</a> -->
+                  <a href="#" class="btn  btn-warning" data-toggle="modal" data-target="#modal-hackathon">Registration</a>
+                </div>
+              </div>
+            </article>
+          </div>
+          </div>
+
+
+          <div class="row">
+          <div class="col-12">
+            <article class="article article-style-b">
+              <div class="article-header">
+                <a href="asset_dua/custom/img/event/workshop_3.jpeg" target="_blank" class="fancybox fancybox-effects-a" data-fancybox="file">
+                  <div class="article-image" data-background="asset_dua/custom/img/event/workshop_3.jpeg"></div>
+                </a>
+                <div class="article-badge">
+                  <div class="article-badge-item bg-danger"><i class="fas fa-fire"></i> Event Closed</div>
+                </div>
+              </div>
+              <div class="article-details">
+                <div class="article-category">
+                  Universitas Trunojoyo Madura
+                  <div class="bullet"></div> 07 April 2019
+                </div>
+                <div class="article-title">
+                  <h2><a href="#">Campus Workshop 3</a></h2>
+                </div>
+                <!-- <p>Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. </p> -->
+                <div class="article-cta">
+                 <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#modal-workshop">Registration</a>
+                </div>
+              </div>
+            </article>
+          </div>
+          </div>
+
+
+          <div class="row">
+          <div class="col-12">
+            <article class="article article-style-b">
+              <div class="article-header">
+                <a href="asset_dua/custom/img/event/workshop_2.jpeg" target="_blank" class="fancybox fancybox-effects-a" data-fancybox="file">
+                  <div class="article-image" data-background="asset_dua/custom/img/event/workshop_2.jpeg"></div>
+                </a>
+                <div class="article-badge">
+                  <div class="article-badge-item bg-danger"><i class="fas fa-fire"></i> Event Closed</div>
+                </div>
+              </div>
+              <div class="article-details">
+                <div class="article-category">
+                  Universitas Maarif Hasyim Latif Sidoarjo
+                  <div class="bullet"></div> 17 March 2019
+                </div>
+                <div class="article-title">
+                  <h2><a href="#">Campus Workshop 2</a></h2>
+                </div>
+                <!-- <p>Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. </p> -->
+                <div class="article-cta">
+                  <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#modal-workshop">Registration</a>
+                </div>
+              </div>
+            </article>
+          </div>
+          </div>
+
+          <div class="row">
+          <div class="col-12">
+            <article class="article article-style-b">
+              <div class="article-header">
+                <a href="asset_dua/custom/img/event/workshop_1.jpeg" target="_blank" class="fancybox fancybox-effects-a" data-fancybox="file">
+                  <div class="article-image" data-background="asset_dua/custom/img/event/workshop_1.jpeg"></div>
+                </a>
+                <div class="article-badge">
+                  <div class="article-badge-item bg-danger"><i class="fas fa-fire"></i> Event Closed</div>
+                </div>
+              </div>
+              <div class="article-details">
+                <div class="article-category">
+                  Politeknik NSC Surabaya
+                  <div class="bullet"></div> 17 March 2019
+                </div>
+                <div class="article-title">
+                  <h2><a href="#">Campus Workshop 1</a></h2>
+                </div>
+                <!-- <p>Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. </p> -->
+                <div class="article-cta">
+                  <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#modal-workshop">Registration</a>
+                </div>
+              </div>
+            </article>
+          </div>
+          </div>
+          <!-- end list event -->
+
+
+         
+
+
+         
 
         </section>
       </div>
@@ -202,13 +406,171 @@
 
 
   <!-- Modal boostrap -->
-  <!-- COLLECT POINTS -->
+  <!-- MODAL REGISTRATION SHOWCASE -->
   <div class="modal fade" tabindex="-1" role="dialog" id="modal-collect">
     <form id="collect_point" class="new_absen">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">Collect Points</h5>
+            <h5 class="modal-title">Registration</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+             <div class="form-group">
+              <label for="email_text">E-mail</label>
+              <input type="email" class="form-control" name="email" id="email_text" disabled=""></input>
+            </div>
+            <div class="form-group">
+              <label for="Status">Event Type</label>
+              <select class="form-control" id="status_collect">
+                <!-- <option value="workshop1">Campus Workshop 1</option>
+                <option value="workshop2">Campus Workshop 2</option>
+                <option value="workshop3">Campus Workshop 3</option>
+                <option value="hackathon">Hackathon</option> -->
+                <option value="showcase">Showcase</option>
+              </select>
+            </div>
+            <div class="form-group" >
+              <label for="keterangan">Token point (DSC PENS Team) manually :</label>
+              <input type="password" size="12" class="qrcode-text form-control" name="keterangan" id="keterangan_collect">
+              <label class="qrcode-text-btn dropzone dz-clickable" id="mydropzone">
+                <!-- <span>or scan qr code</span> --> 
+                <input type=file accept="image/*" capture="environment" onclick="return showQRIntro();" onchange="openQRCamera(this);" tabindex="-1" placeholder="or scan qr code">
+              </label>
+            </div>
+            <div class="form-group">
+              <input type="hidden" id="loc" class="loc" name="custId" value="">
+            </div>
+          </div>
+          <div class="modal-footer bg-whitesmoke br">
+            <button type="submit" id="redeembtn" class="btn btn-primary redeembtn">Collect</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+    </div>
+    </form>
+  </div>
+
+  <!-- MODAL REGISTRATION HACKATHON -->
+  <div class="modal fade" tabindex="-1" role="dialog" id="modal-hackathon">
+    <form id="collect_point" class="new_absen">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Registration</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+             <div class="form-group">
+              <label for="email_text">E-mail</label>
+              <input type="email" class="form-control" name="email" id="email_text" disabled=""></input>
+            </div>
+            <div class="form-group">
+              <label for="Status">Event Type</label>
+              <select class="form-control" id="status_collect">
+                <!-- <option value="workshop1">Campus Workshop 1</option>
+                <option value="workshop2">Campus Workshop 2</option>
+                <option value="workshop3">Campus Workshop 3</option> -->
+                <option value="hackathon">Hackathon</option>
+                <!-- <option value="showcase">Showcase</option> -->
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="Status">Session</label>
+              <select class="form-control">
+                <option value="">Day 1</option>
+                <option value="">Day 2</option>
+              </select>
+            </div>
+            <div class="form-group" >
+              <label for="keterangan">Token point (DSC PENS Team) manually :</label>
+              <input type="password" size="12" class="qrcode-text form-control" name="keterangan" id="keterangan_collect">
+              <label class="qrcode-text-btn dropzone dz-clickable" id="mydropzone">
+                <!-- <span>or scan qr code</span> --> 
+                <input type=file accept="image/*" capture="environment" onclick="return showQRIntro();" onchange="openQRCamera(this);" tabindex="-1" placeholder="or scan qr code">
+              </label>
+            </div>
+            <div class="form-group">
+              <input type="hidden" id="loc" class="loc" name="custId" value="">
+            </div>
+          </div>
+          <div class="modal-footer bg-whitesmoke br">
+            <button type="submit" id="redeembtn" class="btn btn-primary redeembtn">Collect</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+    </div>
+    </form>
+  </div>
+
+  <!-- MODAL REGISTRATION WORKSHOP -->
+  <div class="modal fade" tabindex="-1" role="dialog" id="modal-workshop">
+    <form id="collect_point" class="new_absen">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Registration</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+             <div class="form-group">
+              <label for="email_text">E-mail</label>
+              <input type="email" class="form-control" name="email" id="email_text" disabled=""></input>
+            </div>
+            <div class="form-group">
+              <label for="Status">Event Type</label>
+              <select class="form-control" id="status_collect">
+                <option value="workshop1">Campus Workshop 1</option>
+                <option value="workshop2">Campus Workshop 2</option>
+                <option value="workshop3">Campus Workshop 3</option>
+                <!-- <option value="hackathon">Hackathon</option> -->
+                <!-- <option value="showcase">Showcase</option> -->
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="Status">Session</label>
+              <select class="form-control">
+                <option value="">GOOGLE VR</option>
+                <option value="">GOOGLE AI</option>
+                <option value="">GOOGLE Cloud</option>
+                <option value="">GOOGLE Assistant</option>
+              </select>
+            </div>
+            <div class="form-group" >
+              <label for="keterangan">Token point (DSC PENS Team) manually :</label>
+              <input type="password" size="12" class="qrcode-text form-control" name="keterangan" id="keterangan_collect">
+              <label class="qrcode-text-btn dropzone dz-clickable" id="mydropzone">
+                <!-- <span>or scan qr code</span> --> 
+                <input type=file accept="image/*" capture="environment" onclick="return showQRIntro();" onchange="openQRCamera(this);" tabindex="-1" placeholder="or scan qr code">
+              </label>
+            </div>
+            <div class="form-group">
+              <input type="hidden" id="loc" class="loc" name="custId" value="">
+            </div>
+          </div>
+          <div class="modal-footer bg-whitesmoke br">
+            <button type="submit" id="redeembtn" class="btn btn-primary redeembtn">Collect</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+    </div>
+    </form>
+  </div>
+
+
+  <!-- COLLECT POINTS / REGISTRATION -->
+  <div class="modal fade" tabindex="-1" role="dialog" id="modal-collect">
+    <form id="collect_point" class="new_absen">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Registration</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -224,7 +586,6 @@
                 <option value="showcase">Showcase</option>
               </select>
             </div>
-         
             <div class="form-group" >
               <label for="keterangan">Input token (DSC PENS Team) manually :</label>
               <input type="password" size="12" class="qrcode-text form-control" name="keterangan" id="keterangan_collect">
@@ -251,6 +612,10 @@
     </form>
   </div>
 
+
+
+
+  <!-- REDEEM -->
   <!-- STICKER -->
   <div class="modal fade" tabindex="-1" role="dialog" id="sticker">
     <form id="redeem_point" class="new_stiker">
@@ -279,7 +644,6 @@
               </label>
 
             </div>
-
 
             <!-- <div class="form-group">
               <label for="keterangan">Input token (Panitia)</label>
@@ -448,9 +812,16 @@
   <script src="asset_dua/modules/nicescroll/jquery.nicescroll.min.js"></script>
   <script src="asset_dua/modules/moment.min.js"></script>
   <script src="asset_dua/js/stisla.js"></script>
+
   <!-- JS Libraies -->
+  <script src="asset_dua/modules/jquery.sparkline.min.js"></script>
+  <script src="asset_dua/modules/chart.min.js"></script>
+  <script src="asset_dua/modules/owlcarousel2/dist/owl.carousel.min.js"></script>
+  <script src="asset_dua/modules/summernote/summernote-bs4.js"></script>
+  <script src="asset_dua/modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
 
   <!-- Page Specific JS File -->
+  <script src="asset_dua/js/page/index.js"></script>
 
   <!-- Template JS File -->
   <script src="asset_dua/js/scripts.js"></script>
@@ -994,6 +1365,7 @@
 
     startTime();
     </script>
+    <script src="asset_dua/fancybox/dist/jquery.fancybox.js" type="text/javascript"></script>
 
 </body>
 </html>
