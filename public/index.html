@@ -986,7 +986,7 @@
                         token_stiker = token[6].token;
                         token_pin = token[7].token;
                         token_gantungan = token[8].token;
-                        console.log(list);
+                        // console.log(list);
                         /* coll = token[0].token;
                         redm = token[1].token; */
                         /* console.log(coll);
@@ -1194,15 +1194,16 @@
                           redeemin3.innerHTML = "Redeem Again";
                         }
                         else{
-                          alert("Sorry you dont have enough point.\nNeed more "+point_db);
                           redeemin3.innerHTML = "Try Again";
+                          alert("Sorry you dont have enough point.\nNeed more "+point_db);
                         }
                       }
                        
-                      if(rPin.value.toLowerCase() == "gans" && tokenInput_gans.value.toLowerCase() != token_gantungan)
+                      if(rGans.value.toLowerCase() == "gans" && tokenInput_gans.value.toLowerCase() != token_gantungan)
                       {
-                        alert('invalid token');
                         redeemin3.innerHTML = "Try Again";
+                        alert('invalid token');
+                        
                       }
                         
                     }
