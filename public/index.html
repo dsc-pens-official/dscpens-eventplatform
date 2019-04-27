@@ -162,7 +162,7 @@
                           <div class="product-name">DSC PENS Sticker</div>
                           <div class="text-muted text-small">10 Point</div>
                           <div class="product-cta">
-                            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#sticker">Redeem</a>
+                            <a href="#" class="btn btn-primary redeemin" data-toggle="modal" data-target="#sticker">Redeem</a>
                           </div>
                         </div>  
                       </div>
@@ -176,7 +176,7 @@
                         </div>
                         <div class="product-details">
                           <div class="product-name">DSC PENS Pin</div>
-                          <div class="text-muted text-small">15 Point</div>
+                          <div class="text-muted text-small">10 Point</div>
                           <div class="product-cta">
                             <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#pin">Redeem</a>
                           </div>
@@ -420,7 +420,7 @@
           <div class="modal-body">
              <div class="form-group">
               <label for="email_text">E-mail</label>
-              <input type="email" class="form-control" name="email" id="email_text" disabled=""></input>
+              <input type="email" class="form-control email_text" value="" name="email_text"  readonly></input>
             </div>
             <div class="form-group">
               <label for="Status">Event Type</label>
@@ -467,7 +467,7 @@
           <div class="modal-body">
              <div class="form-group">
               <label for="email_text">E-mail</label>
-              <input type="email" class="form-control" name="email" id="email_text" disabled=""></input>
+              <input type="email" class="form-control email_text" name="email" disabled=""></input>
             </div>
             <div class="form-group">
               <label for="Status">Event Type</label>
@@ -521,7 +521,7 @@
           <div class="modal-body">
              <div class="form-group">
               <label for="email_text">E-mail</label>
-              <input type="email" class="form-control" name="email" id="email_text" disabled=""></input>
+              <input type="email" class="form-control email_text" name="email" id="email_text" disabled=""></input>
             </div>
             <div class="form-group">
               <label for="Status">Event Type</label>
@@ -655,7 +655,7 @@
             </div>
           </div>
           <div class="modal-footer bg-whitesmoke br">
-            <button type="submit" class="btn btn-primary">Redeem</button>
+            <button type="submit" class="btn btn-primary" id="redeemin2">Redeem</button>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           </div>
         </div>
@@ -702,7 +702,7 @@
 
           </div>
           <div class="modal-footer bg-whitesmoke br">
-            <button type="submit" class="btn btn-primary redeembtn">Redeem</button>
+            <button type="submit" class="btn btn-primary " id="redeemin3">Redeem</button>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           </div>
         </div>
@@ -748,7 +748,7 @@
             </div>
           </div>
           <div class="modal-footer bg-whitesmoke br">
-            <button type="submit" class="btn btn-primary">Redeem</button>
+            <button type="submit" class="btn btn-primary " id="redeemin1">Redeem</button>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           </div>
         </div>
@@ -794,7 +794,7 @@
             </div>
           </div>
           <div class="modal-footer bg-whitesmoke br">
-            <button type="submit" class="btn btn-primary">Redeem</button>
+            <button type="submit" class="btn btn-primary" id="redeemin4">Redeem</button>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           </div>
         </div>
@@ -911,6 +911,11 @@
         var token_gantungan;
 
         var redeemBtn;
+        var emailText2;
+        var redeemin1;
+        var redeemin2;
+        var redeemin3;
+        var redeemin4;
 
         var tokenInput_collect;
         var tokenInput_redeem;
@@ -946,7 +951,13 @@
              status_collect = document.getElementById("status_collect");
              status_redeem = document.getElementById("status_redeem");
              email_text = document.getElementById("email_text");
+             emailText2  = document.getElementsByName("email_text");
              point_text = document.getElementById("point_text");
+
+             redeemin1 = document.getElementById("redeemin1");
+             redeemin2 = document.getElementById("redeemin2");
+             redeemin3 = document.getElementById("redeemin3");
+             redeemin4 = document.getElementById("redeemin4");
 
              rGans = document.getElementById("redeemGans"); 
              rPin = document.getElementById("redeemPin");
@@ -993,6 +1004,14 @@
             var point_data;
             user_email = firebase.auth().currentUser.email;
              email_text.innerHTML = user_email;
+             var i;
+              for (i = 0; i < emailText2.length; i++) {
+                console.log(i);
+                if (emailText2[i].type == "email") {
+                    emailText2[i].value = user_email;
+                  }
+              }
+            //  emailText2[0].value =  user_email;
                     uid = firebase.auth().currentUser.uid;
             firebase.database().ref('users/'+uid).once('value')
                         .then(function(snapshot){
@@ -1013,24 +1032,28 @@
                 
                 $('.new_pin').submit(function(e){
                     action = "pin";
+                    redeemin1.innerHTML = "Please Wait..."
                     submitData();
                     e.preventDefault();    
                 });
 
                 $('.new_gans').submit(function(e){
                     action = "gans";
+                    redeemin3.innerHTML = "Please Wait..."
                     submitData();
                     e.preventDefault();    
                 });
                 
                 $('.new_stiker').submit(function(e){
                     action = "stiker";
+                    redeemin2.innerHTML = "Please Wait..."
                     submitData();
                     e.preventDefault();    
                 });
 
                 $('.new_kaos').submit(function(e){
                     action = "kaos";
+                    redeemin4.innerHTML = "Please Wait..."
                     submitData();
                     e.preventDefault();    
                 });
@@ -1164,49 +1187,72 @@
                     if(action == "gans"){
                       if(rGans.value.toLowerCase() == "gans" && tokenInput_gans.value.toLowerCase() == token_gantungan){
                         point_db = snapshot.val().point - (jGans.value * 15);
+                        
                         if(point_db >=0 ) {
                           point_text.innerHTML = "Points: " + point_db;
                           alert("Redeem succeed.\nPoint : "+point_db);
+                          redeemin3.innerHTML = "Redeem Again";
                         }
                         else{
                           alert("Sorry you dont have enough point.\nNeed more "+point_db);
+                          redeemin3.innerHTML = "Try Again";
                         }
                       }
                        
                       if(rPin.value.toLowerCase() == "gans" && tokenInput_gans.value.toLowerCase() != token_gantungan)
+                      {
                         alert('invalid token');
+                        redeemin3.innerHTML = "Try Again";
+                      }
+                        
                     }
 
                     if(action == "pin"){
                       if(rPin.value.toLowerCase() == "pin" && tokenInput_pin.value.toLowerCase() == token_pin){
-                        point_db = snapshot.val().point - (jPin.value * 15);
+                        point_db = snapshot.val().point - (jPin.value * 10);
+                        
                         if(point_db >=0 ) {
                           point_text.innerHTML = "Points: " + point_db;
                           alert("Redeem succeed.\nPoint : "+point_db);
+                          redeemin1.innerHTML = "Redeem Again";
                         }
                         else{
                           alert("Sorry you dont have enough point.\nNeed more "+point_db);
+                          redeemin1.innerHTML = "Try Again";
                         }
                       }
                        
                       if(rPin.value.toLowerCase() == "pin" && tokenInput_pin.value.toLowerCase() != token_pin)
+                      {
+                        redeemin1.innerHTML = "Try Again";
                         alert('invalid token');
+                      }
+
+                        
+                        
                     }
 
                     if(action == "stiker"){
                       if(rSticker.value.toLowerCase() == "stiker" && tokenInput_sticker.value.toLowerCase() == token_stiker) {
                         point_db = snapshot.val().point - (jSticker.value * 10);
+                      
                         if(point_db >=0 ) {
                           point_text.innerHTML = "Points: " + point_db;
                           alert("Redeem succeed.\nPoint : "+point_db);
+                          redeemin2.innerHTML = "Redeem Again";
                         }
                         else{
                           alert("Sorry you dont have enough point.\nNeed more "+point_db);
+                          redeemin2.innerHTML = "Redeem Again";
                         }
                       }
                         
                       if(rSticker.value.toLowerCase() == "stiker" && tokenInput_sticker.value.toLowerCase() != token_stiker)
+                      {
                         alert('invalid token');
+                        redeemin2.innerHTML = "Try Again";
+                      }
+                        
                     }
 
                     if(action == "kaos") {
@@ -1215,14 +1261,20 @@
                         if(point_db >=0 ) {
                           point_text.innerHTML = "Points: " + point_db;
                           alert("Redeem succeed.\nPoint : "+point_db);
+                          redeemin4.innerHTML = "Redeem Again";
                         }
                         else{
                           alert("Sorry you dont have enough point.\nNeed more "+point_db);
+                          redeemin4.innerHTML = "Redeem Again";
                         }
                       }
                         
                       if(rKaos.value.toLowerCase() == "kaos" && tokenInput_kaos.value.toLowerCase() != token_kaos)
+                      {
+                        redeemin4.innerHTML = "Try Again";
                         alert('invalid token');
+                      }
+                        
                     }
                         if(point_db >=0 ){
                         firebase.database().ref('users/' + uid+"/").update({
