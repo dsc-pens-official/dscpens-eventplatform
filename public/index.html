@@ -11,51 +11,64 @@
     <title>DSC PENS - Event Platform</title>
       
     <!-- Bootstrap Core CSS -->
-    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+      <!--Font CSS CDN   -->
+      <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900|RobotoDraft:400,100,300,500,700,900'>
 
-    <!-- MetisMenu CSS -->
-    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
-
-    <!-- Morris Charts CSS -->
-    <link href="../vendor/morrisjs/morris.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-    <!-- Bootstrap core CSS -->
-    <link href="asset/front/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+      <!-- Bootstrap CDN -->
+      <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+      <!-- Font Awesome -->
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+      <!--<link href="asset/front/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">-->
 
     <!-- Custom fonts for this template -->
-    <link href="asset/front/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
-    <!-- Plugin CSS -->
-    <link href="asset/front/vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
 
-    <!-- Custom styles for this template -->
-    <link href="asset/front/css/freelancer.css" rel="stylesheet">
+    <!-- Custom CSS-->
+    <link rel="stylesheet" href="asset/front/css/style.css">
+    <!-- <link href="asset/front/vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css"> -->
 
-    <link rel="manifest" href="manifest.json">
+
+
+
+
+
 
   </head>
 
   <body onload="getLocation()"> 
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
-      <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">DSC PENS - Event Platform</a>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
+    <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light ">
+        <a class="navbar-brand text-primary" href="#">
+            <i class="fab fa-google" style="color: #417df9;"></i> &nbsp
+            <span > DSC PENS Event Platform </span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="nav navbar-nav ml-auto ">
+                <li class="nav-item ">
+                    <div class="nav-link text-info">
+                        <i class="fas fa-envelope"> </i>
+                        <span class="" id="email_text"></span>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <div class="nav-link text-info">
+                        <i class="fas fa-coins"> </i>
+                        <span class="" id="point_text"></span>
+                    </div>
+                </li>
+
+            </ul>
         </div>
-      </div>
     </nav>
 
     <!-- Header -->
-    <header id="page-top" class="masthead bg-primary text-white text-center">
+    <header id="page-top" class="masthead bg-dsc text-white text-center">
       <div class="container">
         <img  class="img-fluid mb-3 d-block mx-auto" width="300" height="300" src="dscpens.png" alt="">
         <h1 id="MyClockDisplay" class="text-uppercase mb-0"></h1>
@@ -106,7 +119,7 @@
         </div>
       </div>
     </section>
-      
+
       <nav class="navbar navbar-expand-lg bg-secondary fixed-bottom text-uppercase" id="mainNav">
       <div class="container">
         <a class="navbar-brand js-scroll-trigger" href="#page-bottom"></a>
@@ -151,8 +164,8 @@
         </button>
       </div>
       <div class="modal-body">
-          <h6 id="email_text">Email : </h6>
-          <h6 id="point_text">Points : </h6> 
+          <h6 id="">Email : </h6>
+          <h6 id="">Points : </h6>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
@@ -161,7 +174,7 @@
     </form>
   </div>
 </div>
-      
+
 
 <!-- Modal Absen-->
 <div class="modal fade" id="absen" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="true">
@@ -200,7 +213,7 @@
     </form>
   </div>
 </div>
-      
+
 
 <!-- Modal Izin-->
 <div class="modal fade" id="izin" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="true">
@@ -229,7 +242,7 @@
           <div class="form-group">
             <input type="hidden" id="loc1" class="loc" name="custId" value="">
           </div>
-        
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -289,6 +302,7 @@
             <div class="form-group">
               <input type="hidden" id="redeemSticker" value="stiker">
             </div>
+            <!-- Todo : Membuat Inputan type hiddden gantuangan kunci id=redeemGanci -->
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -335,7 +349,7 @@
 
     <!-- Plugin JavaScript -->
     <script src="asset/front/vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script src="asset/front/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <!--<script src="asset/front/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>-->
     <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
     <script>
       if('serviceWorker' in navigator) {
@@ -392,6 +406,7 @@
         var tokenInput_redeem;
         var tokenInput_pin;
         var tokenInput_sticker;
+        var tokenInput_ganci; //Todo Menambahkan value input ke firebase
         var tokenInput_kaos;
         var status_collect;
         var status_redeem;
@@ -401,12 +416,14 @@
         var uid;
         var rPin;
         var rSticker;
+        var rGanci;
         var rKaos;
          document.addEventListener("DOMContentLoaded", function(){
              tokenInput_collect = document.getElementById("keterangan_collect");
              tokenInput_redeem = document.getElementById("keterangan_redeem");
              tokenInput_pin = document.getElementById("keterangan_pin");
              tokenInput_sticker = document.getElementById("keterangan_sticker");
+             //Todo token input ganci
              tokenInput_kaos = document.getElementById("keterangan_kaos");
              status_collect = document.getElementById("status_collect");
              status_redeem = document.getElementById("status_redeem");
@@ -414,6 +431,7 @@
              point_text = document.getElementById("point_text");
              rPin = document.getElementById("redeemPin");
              rSticker = document.getElementById("redeemSticker");
+             //Todo token input Radeem ganci
              rKaos = document.getElementById("redeemKaos");
              token = [];
 //             });
@@ -474,6 +492,10 @@
                     submitData();
                     e.preventDefault();    
                 });
+
+                function refreshPoint(){
+                    point_text.innerHTML = "Points : "+ point_db;
+                }
                 
                 function submitData(){
                     var date = new Date();
@@ -536,7 +558,9 @@
                     if(action == "collect"){
                       if(status_collect.value.toLowerCase() == "workshop" && tokenInput_collect.value.toLowerCase() == coll) {
                         point_db = snapshot.val().point+5;
+                        refreshPoint();
                         alert("Poin Collection succeed.\nPoint : "+point_db);
+
                       }
                     
                       if(status_collect.value.toLowerCase() == "workshop" && tokenInput_collect.value.toLowerCase() != coll) {
@@ -545,6 +569,7 @@
                     
                       if(status_collect.value.toLowerCase() == "showcase" && tokenInput_collect.value.toLowerCase() == coll) {
                         point_db = snapshot.val().point+3;
+                        refreshPoint();
                         alert("Poin Collection succeed.\nPoint : "+point_db);
                       }         
       
@@ -556,7 +581,8 @@
 
                     if(action == "pin"){
                       if(rPin.value.toLowerCase() == "pin" && tokenInput_pin.value.toLowerCase() == redm){
-                        point_db = snapshot.val().point-10;
+                        point_db = snapshot.val().point-20;
+                        refreshPoint();
                         if(point_db >=0 ) {
                           alert("Redeem succeed.\nPoint : "+point_db);
                         }
@@ -571,7 +597,8 @@
 
                     if(action == "stiker"){
                       if(rSticker.value.toLowerCase() == "stiker" && tokenInput_sticker.value.toLowerCase() == redm) {
-                        point_db = snapshot.val().point-7;
+                        point_db = snapshot.val().point-10;
+                        refreshPoint();
                         if(point_db >=0 ) {
                           alert("Redeem succeed.\nPoint : "+point_db);
                         }
@@ -584,9 +611,26 @@
                         alert('invalid token');
                     }
 
+                    if(action == "ganci"){
+                                if(rGanci.value.toLowerCase() == "ganci" && tokenInput_ganci.value.toLowerCase() == redm) {
+                                    point_db = snapshot.val().point-15;
+                                    refreshPoint();
+                                    if(point_db >=0 ) {
+                                        alert("Redeem succeed.\nPoint : "+point_db);
+                                    }
+                                    else{
+                                        alert("Sorry you dont have enough point.\nNeed more "+point_db);
+                                    }
+                                }
+
+                                if(rGanci.value.toLowerCase() == "ganci" && tokenInput_ganci.value.toLowerCase() != redm)
+                                    alert('invalid token');
+                            }
+
                     if(action == "kaos") {
                       if(rKaos.value.toLowerCase() == "kaos" && tokenInput_kaos.value.toLowerCase() == redm) {
-                        point_db = snapshot.val().point-50;
+                        point_db = snapshot.val().point-150;
+                        refreshPoint();
                         if(point_db >=0 ) {
                           alert("Redeem succeed.\nPoint : "+point_db);
                         }
