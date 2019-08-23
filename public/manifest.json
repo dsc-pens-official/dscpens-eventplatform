@@ -3,6 +3,18 @@
   "short_name": "DSC PENS - Event Platform",
   "icons": [{
     "src": "img/icons/dscpens.png",
+      "sizes": "57x57",
+      "type": "image/png"
+    }, {
+      "src": "img/icons/dscpens.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    }, {
+      "src": "img/icons/dscpens.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    }, {
+    "src": "img/icons/dscpens.png",
       "sizes": "128x128",
       "type": "image/png"
     }, {

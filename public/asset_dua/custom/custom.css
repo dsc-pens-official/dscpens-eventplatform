@@ -1,0 +1,105 @@
+.card.card-statistic-2 .card-body {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    /* align-content: center; */
+}
+
+.media-body {
+    -ms-flex: 1;
+    flex: 1;
+    margin-top: 15px;
+}
+
+.main-content {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 80px;
+    width: 100%;
+    position: relative;
+}
+.navbar {
+    height: 70px;
+    left: 0px;
+    right: 5px;
+    position: absolute;
+    z-index: 890;
+    background-color: transparent;
+}
+
+
+.lokasi {
+    font-size: 12px;
+    font-weight: 100;
+    line-height: 14px;
+}
+
+
+/* scan qr */
+.dropzone {
+    border: 2px dashed #6777ef;
+    min-height: 10px;
+    text-align: center;
+}
+.dropzone .dz-message {
+    font-size: 14px;
+    color: #34395e;
+    margin: 25px;
+}
+.dropzone .dz-message > input[type=file] {
+    position:absolute; 
+    overflow:hidden; 
+    width:1px; 
+    height:1px; 
+    opacity:0
+}
+
+.main-wrapper-1 .section .section-header__gambar {
+    margin-left: -30px;
+    margin-right: -30px;
+    margin-top: -10px;
+    border-radius: 0;
+    border-top: 1px solid #f9f9f9;
+    padding-left: 0px; 
+    padding-right: 0px; 
+}
+.section .section-header__gambar {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03);
+    background-color: #fff;
+    border-radius: 3px;
+    border: none;
+    position: relative;
+    margin-bottom: 10px;
+    padding: 0px; 
+    display: flex;
+    align-items: center;
+}
+
+.section-header__point {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03);
+    background-color: #fff;
+    border-radius: 3px;
+    border: none;
+    position: relative;
+    margin-bottom: 0px; 
+    padding-top: 15px;
+    padding-bottom: 12px;
+    display: flex;
+    align-items: center;
+}
+.section-header__point {
+    margin-left: -30px;
+    margin-right: -30px;
+    margin-top: -10px;
+    border-radius: 0;
+    border-top: 1px solid #f9f9f9;
+    padding-left: 35px;
+    padding-right: 0px;
+}
+@media (max-width: 575.98px) {
+    .section .section-header .section-header__point {
+        flex-wrap: wrap;
+        margin-bottom: 0px !important; 
+    }
+}

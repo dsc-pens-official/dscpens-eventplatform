@@ -20,10 +20,20 @@ function generateTokenWorkshop(){
 }
 function generateTokenShowcase(){
     firebase.database().ref('list_token/showcase/').push({
-    event_type: "showcase"
+    event_type: "showcase",
+    token:'sjd123'
   //  email: email,
    // profile_picture : imageUrl
   });
+}
+
+function generateTokenWorshop1(){
+  firebase.database().ref('list_token/').push({
+  event_type: "workshop123",
+  token:'sjd123'
+//  email: email,
+ // profile_picture : imageUrl
+});
 }
 
 function checkUser(){

@@ -1,13 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+  <title>DSC PENS Event &mdash; Platform  </title>
 
-  <head>
+  <!-- General CSS Files -->
+  <link rel="stylesheet" href="asset_dua/modules/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="asset_dua/modules/fontawesome/css/all.min.css">
+  
+  <!-- CSS Libraries -->
+  <link rel="stylesheet" href="asset_dua/modules/jqvmap/dist/jqvmap.min.css">
+  <link rel="stylesheet" href="asset_dua/modules/summernote/summernote-bs4.css">
+  <link rel="stylesheet" href="asset_dua/modules/owlcarousel2/dist/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="asset_dua/modules/owlcarousel2/dist/assets/owl.theme.default.min.css">
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+  <!-- Template CSS -->
+  <link rel="stylesheet" href="asset_dua/css/style.css">
+  <link rel="stylesheet" href="asset_dua/css/components.css">
 
+<<<<<<< HEAD
     <title>DSC PENS - Event Platform</title>
       
     <!-- Bootstrap Core CSS -->
@@ -33,12 +45,131 @@
 
 
 
+=======
+  <!-- custom -->
+  <link rel="stylesheet" href="asset_dua/custom/custom.css">
+  <style>
+    input {
+      font-size:12pt
+    }
+    input, label {
+      vertical-align:middle
+    }
+    .qrcode-text {
+      padding-right:1.7em; 
+      margin-right:0
+    }
+    .qrcode-text-btn {
+        display: inline-block;
+        background: url(asset_dua/custom/img/scan-qr.png) 50% 50% no-repeat;
+        margin-top: 10px;
+        /* height: 1em; */
+         width: 100%; 
+        /* margin-left: -1.7em; */
+        cursor: pointer;
+    }
+    .qrcode-text-btn > input[type=file] {
+        /* float: left; */
+        /* text-align: center; */
+        padding-bottom: 10px;
+        /* position: absolute; */
+        /* overflow: hidden; */
+        /* width: 100%; */
+        opacity: 0;
+    }
+  </style>
+
+  <!-- favicon -->
+  <link rel="icon" href="asset_dua/custom/img/dsc.png" sizes="50x50" type="image/png">
+
+  <!-- Start GA -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-94034622-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-94034622-3');
+  </script>
+  <!-- /END GA -->
+
+  <!-- fancybox -->
+  <link href="asset_dua/fancybox/dist/jquery.fancybox.css" rel="stylesheet" type="text/css" media="screen" />
 
 
-  </head>
+  <link rel="manifest" href="manifest.json">
 
-  <body onload="getLocation()"> 
+</head>
 
+<body onload="getLocation()">
+  <div id="app">
+    <div class="main-wrapper main-wrapper-1">
+      <div class="navbar-bg"></div>
+      <nav class="navbar navbar-expand-lg main-navbar">
+        <form class="form-inline mr-auto">
+          <ul class="navbar-nav mr-3">
+            <li>
+              <a href="#" class="nav-link nav-link-lg">
+                <img src="asset_dua/custom/img/dsc.png" width="35px" style="padding-top: 5px;">
+              </a>
+            </li>
+            <!-- <img src="asset_dua/custom/img/dsc.png" width="8%" height="8%" class="mr-2 mt-2"> -->
+            <span style="padding-top: 8px; font-size: 13px; color: white; font-weight: bold;">DCS PENS - EVENT PLATFORM</span> 
+          </ul>
+        </form>
+        <ul class="navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" data-toggle="dropdown" class="nav-link  nav-link-lg nav-link-user"><i class="fas fa-ellipsis-v"></i></a>
+            <div class="dropdown-menu dropdown-menu-right">
+              <!-- <div class="dropdown-title" id="email_text"></div> -->
+              <!-- <a href="#redeem_section" class="dropdown-item has-icon" >
+                <i class="fas fa-gem"></i> Redeem Points
+              </a> -->
+              <!-- <a href="" class="dropdown-item has-icon" data-toggle="modal" data-target="#modal-collect">
+                <i class="fas fa-gem"></i> Collect Points
+              </a> -->
+              <!-- <div class="dropdown-divider"></div> -->
+              <a href="#" class="dropdown-item has-icon text-danger" id="logout">
+                <i class="fas fa-sign-out-alt"></i> Logout
+              </a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+      <!-- Main Content -->
+      <div class="main-content">
+        <section class="section">
+          
+
+          <div class="section-header__gambar">
+            <a href="asset_dua/custom/img/banner.jpeg" target="_blank" class="chocolat-image fancybox fancybox-effects-a" data-fancybox="file" style="text-decoration: none; width: 100%;">
+                <img src="asset_dua/custom/img/banner.jpeg" class="img" style="width: 100%">
+                <p class="text-center text-default">The next event DSC Pens Campus Roadshow</p>
+            </a>
+          </div>
+>>>>>>> 85f36c3497b2ad6bf8ac29b79d7c9303b7755b52
+
+
+          <div class="summary-item mb-3">
+            <ul class="list-unstyled list-unstyled-border">
+              <li class="media">
+                <div class="media-body">
+                  <div class="media-right">
+                    <p class="badge badge-pill badge-warning" id="point_text"></p>
+                    <!-- <a href="" class="btn btn-primary" data-toggle="modal" data-target="#sticker">Redeem</a> -->
+                  </div>
+                  <div class="media-title" id="email_text"></div>
+                  <div class="text-muted text-small">Your account </div>
+                </div>
+              </li>
+            </ul>
+            <hr>
+          </div>
+        
+
+          
+
+<<<<<<< HEAD
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light ">
         <a class="navbar-brand text-primary" href="#">
@@ -89,35 +220,252 @@
                   <h5 class="card-title">DSC PENS Pin</h5>
                   <a href="#" data-toggle="modal" data-target="#pin" class="btn bg-secondary"><b>REDEEM</b></a>
                 </center>
+=======
+          <!-- redeem point -->
+          <div class="row">
+            <div class="col-md-6">
+              <div class="card">
+                <div class="card-header">
+                  <h4>Redeem points</h4>
+                </div>
+                <div class="card-body">
+                  <div class="owl-carousel owl-theme" id="products-carousel">
+                    
+                    <div>
+                      <div class="product-item pb-3">
+                        <div class="product-image">
+                          <a href="asset_dua/custom/img/redeem/sticker.jpeg" target="_blank" class="fancybox fancybox-effects-a" data-fancybox="file">
+                            <img class="img-fluid" width="50" src="asset_dua/custom/img/redeem/sticker.jpeg" alt="avatar">
+                          </a>
+                        </div>
+                        <div class="product-details">
+                          <div class="product-name">DSC PENS Sticker</div>
+                          <div class="text-muted text-small">10 Point</div>
+                          <div class="product-cta">
+                            <a href="#" class="btn btn-primary redeemin" data-toggle="modal" data-target="#sticker">Redeem</a>
+                          </div>
+                        </div>  
+                      </div>
+                    </div>
+                    <div>
+                      <div class="product-item pb-3">
+                        <div class="product-image">
+                          <a href="asset_dua/custom/img/redeem/pin.jpeg" target="_blank" class="fancybox fancybox-effects-a" data-fancybox="file">
+                            <img class="img-fluid" width="50" src="asset_dua/custom/img/redeem/pin.jpeg" alt="avatar">
+                          </a>
+                        </div>
+                        <div class="product-details">
+                          <div class="product-name">DSC PENS Pin</div>
+                          <div class="text-muted text-small">10 Point</div>
+                          <div class="product-cta">
+                            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#pin">Redeem</a>
+                          </div>
+                        </div>  
+                      </div>
+                    </div>
+                    <div>
+                      <div class="product-item pb-3">
+                        <div class="product-image">
+                          <a href="asset_dua/custom/img/redeem/keychain.jpeg" target="_blank" class="fancybox fancybox-effects-a" data-fancybox="file">
+                            <img class="img-fluid" width="50" src="asset_dua/custom/img/redeem/keychain.jpeg" alt="avatar">
+                          </a>
+                        </div>
+                        <div class="product-details">
+                          <div class="product-name">DSC PENS Keychain</div>
+                          <div class="text-muted text-small">15 Point</div>
+                          <div class="product-cta">
+                            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modal-gantungan">Redeem</a>
+                          </div>
+                        </div>  
+                      </div>
+                    </div>
+                    <div>
+                      <div class="product-item pb-3">
+                        <div class="product-image">
+                          <a href="asset_dua/custom/img/redeem/shirt.jpeg" target="_blank" class="fancybox fancybox-effects-a" data-fancybox="file">
+                            <img class="img-fluid" width="50" src="asset_dua/custom/img/redeem/shirt.jpeg" alt="avatar">
+                          </a>
+                        </div>
+                        <div class="product-details">
+                          <div class="product-name">DSC PENS T-shirt</div>
+                          <div class="text-muted text-small">150 Point</div>
+                          <div class="product-cta">
+                            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#tshirt">Redeem</a>
+                          </div>
+                        </div>  
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+>>>>>>> 85f36c3497b2ad6bf8ac29b79d7c9303b7755b52
               </div>
             </div>
+          </div>
+          <!-- end redeem point -->
+
+
+
+          <!-- list event -->
+          <div class="row mt-4">
+          <div class="col-12">
+            <article class="article article-style-b">
+              <div class="article-header">
+                <a href="asset_dua/custom/img/event/award.jpeg" target="_blank" class="fancybox fancybox-effects-a" data-fancybox="file">
+                  <div class="article-image" data-background="asset_dua/custom/img/event/award.jpeg"></div>
+                </a>
+                <div class="article-badge">
+                  <div class="article-badge-item badge-primary"><i class="fas fa-fire"></i> Event Active</div>
+                </div>
+              </div>
+              <div class="article-details">
+                <div class="article-category">
+                  Multifunction Hall Lt.1 BG Junction Mall Surabaya
+                  <div class="bullet"></div> 28 April 2019
+                </div>
+                <div class="article-title">
+                  <h2><a href="#">Seminar, Showcase & Awarding</a></h2>
+                </div>
+                <!-- <p>Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. </p> -->
+                <div class="article-cta">
+                  <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#modal-collect">Registration</a>
+                </div>
+              </div>
+            </article>
+          </div>
           </div>
 
-          <div style="margin-bottom: 30px;" class="col-md-6 col-lg-4">
-            <div class="card" style="width: 18rem;">
-              <img class="card-img-top" src="dsc-bg.png" alt="Card image cap">
-              <div class="card-body">
-                  <center>
-                    <h5 class="card-title">DSC PENS Sticker</h5>
-                    <a href="#" data-toggle="modal" data-target="#sticker" class="btn bg-secondary"><b>REDEEM</b></a>
-                  </center>
+
+          <div class="row">
+          <div class="col-12">
+            <article class="article article-style-b">
+              <div class="article-header">
+                <a href="asset_dua/custom/img/event/hackathon.jpeg" target="_blank" class="fancybox fancybox-effects-a" data-fancybox="file">
+                  <div class="article-image" data-background="asset_dua/custom/img/event/hackathon.jpeg"></div>
+                </a>
+                <div class="article-badge">
+                  <div class="article-badge-item bg-danger"><i class="fas fa-fire"></i> Event Closed</div>
+                </div>
               </div>
-            </div>
+              <div class="article-details">
+                <div class="article-category">
+                  Dilo Surabaya
+                  <div class="bullet"></div> 20-21  April 2019
+                </div>
+                <div class="article-title">
+                  <h2><a href="#">International Hackathon Codeathon</a></h2>
+                </div>
+                <!-- <p>Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. </p> -->
+                <div class="article-cta">
+                  <!-- <a href="#" class="btn disabled btn-warning" data-toggle="modal" data-target="#modal-hackathon">Registration</a> -->
+                  <a href="#" class="btn  btn-warning" data-toggle="modal" data-target="#modal-hackathon">Registration</a>
+                </div>
+              </div>
+            </article>
+          </div>
           </div>
 
-          <div style="margin-bottom: 30px;" class="col-md-6 col-lg-4">
-            <div class="card" style="width: 18rem;">
-              <img class="card-img-top" src="dsc-bg.png" alt="Card image cap">
-              <div class="card-body">
-                  <center>
-                    <h5 class="card-title">DSC PENS Exlusive T-Shirt</h5>
-                    <a href="#" data-toggle="modal" data-target="#tshirt" class="btn bg-secondary"><b>REDEEM</b></a>
-                  </center>
+
+          <div class="row">
+          <div class="col-12">
+            <article class="article article-style-b">
+              <div class="article-header">
+                <a href="asset_dua/custom/img/event/workshop_3.jpeg" target="_blank" class="fancybox fancybox-effects-a" data-fancybox="file">
+                  <div class="article-image" data-background="asset_dua/custom/img/event/workshop_3.jpeg"></div>
+                </a>
+                <div class="article-badge">
+                  <div class="article-badge-item bg-danger"><i class="fas fa-fire"></i> Event Closed</div>
+                </div>
               </div>
-            </div>
+              <div class="article-details">
+                <div class="article-category">
+                  Universitas Trunojoyo Madura
+                  <div class="bullet"></div> 07 April 2019
+                </div>
+                <div class="article-title">
+                  <h2><a href="#">Campus Workshop 3</a></h2>
+                </div>
+                <!-- <p>Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. </p> -->
+                <div class="article-cta">
+                 <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#modal-workshop">Registration</a>
+                </div>
+              </div>
+            </article>
           </div>
-        </div>
+          </div>
+
+
+          <div class="row">
+          <div class="col-12">
+            <article class="article article-style-b">
+              <div class="article-header">
+                <a href="asset_dua/custom/img/event/workshop_2.jpeg" target="_blank" class="fancybox fancybox-effects-a" data-fancybox="file">
+                  <div class="article-image" data-background="asset_dua/custom/img/event/workshop_2.jpeg"></div>
+                </a>
+                <div class="article-badge">
+                  <div class="article-badge-item bg-danger"><i class="fas fa-fire"></i> Event Closed</div>
+                </div>
+              </div>
+              <div class="article-details">
+                <div class="article-category">
+                  Universitas Maarif Hasyim Latif Sidoarjo
+                  <div class="bullet"></div> 17 March 2019
+                </div>
+                <div class="article-title">
+                  <h2><a href="#">Campus Workshop 2</a></h2>
+                </div>
+                <!-- <p>Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. </p> -->
+                <div class="article-cta">
+                  <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#modal-workshop">Registration</a>
+                </div>
+              </div>
+            </article>
+          </div>
+          </div>
+
+          <div class="row">
+          <div class="col-12">
+            <article class="article article-style-b">
+              <div class="article-header">
+                <a href="asset_dua/custom/img/event/workshop_1.jpeg" target="_blank" class="fancybox fancybox-effects-a" data-fancybox="file">
+                  <div class="article-image" data-background="asset_dua/custom/img/event/workshop_1.jpeg"></div>
+                </a>
+                <div class="article-badge">
+                  <div class="article-badge-item bg-danger"><i class="fas fa-fire"></i> Event Closed</div>
+                </div>
+              </div>
+              <div class="article-details">
+                <div class="article-category">
+                  Politeknik NSC Surabaya
+                  <div class="bullet"></div> 17 March 2019
+                </div>
+                <div class="article-title">
+                  <h2><a href="#">Campus Workshop 1</a></h2>
+                </div>
+                <!-- <p>Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. </p> -->
+                <div class="article-cta">
+                  <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#modal-workshop">Registration</a>
+                </div>
+              </div>
+            </article>
+          </div>
+          </div>
+          <!-- end list event -->
+
+
+         
+
+
+         
+
+        </section>
       </div>
+<<<<<<< HEAD
     </section>
 
       <nav class="navbar navbar-expand-lg bg-secondary fixed-bottom text-uppercase" id="mainNav">
@@ -146,16 +494,34 @@
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" id="logout">Logout</a>
             </li>
           </ul>
+=======
+
+     <!--  <footer class="main-footer">
+        <div class="footer-left">
+          Copyright &copy; 2019 <div class="bullet"></div> <span class="text-primary"> DSC PENS Event Platform</span> 
+>>>>>>> 85f36c3497b2ad6bf8ac29b79d7c9303b7755b52
         </div>
-      </div>
-    </nav>
+        <div class="footer-right">
+          
+        </div>
+      </footer> -->
+
+       <!-- <div class="card" style="margin-bottom: 0px; position: fixed; bottom: 0; background-color: #6777ef; color: white; width: 100%;">
+          <div class="card-header" id="collect_point" class="new_absen">
+              <h6 id="email_text"></h6>
+              <div class="badge badge-pill badge-warning float-right ml-4" id="point_text"></div>
+          </div>
+        </div> -->
+
+    </div>
+  </div>
 
 
-      
-<!-- Modal Profile-->
-<div class="modal fade" id="profile" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+  <!-- Modal boostrap -->
+  <!-- MODAL REGISTRATION SHOWCASE -->
+  <div class="modal fade" tabindex="-1" role="dialog" id="modal-collect">
     <form id="collect_point" class="new_absen">
+<<<<<<< HEAD
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Profile</h5>
@@ -170,188 +536,484 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
       </div>
-        </div>
-    </form>
-  </div>
-</div>
-
-
-<!-- Modal Absen-->
-<div class="modal fade" id="absen" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <form id="collect_point" class="new_absen">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Collect Poin</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-          <div class="form-group">
-            <label for="Status">Event Type</label>
-            <select class="form-control" id="status_collect">
-              <option value="workshop">Workshop</option>
-              <option value="showcase">Showcase</option>
-            </select>
+=======
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Registration</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
           </div>
-
-          <div class="form-group">
-            <label for="keterangan">Input token (DSC PENS Team)</label>
-            <input type="password" class="form-control" name="keterangan" id="keterangan_collect"></input>
-          </div>
-          <div class="form-group">
-            <input type="hidden" id="loc" class="loc" name="custId" value="">
-          </div>
-        
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">OK</button>
-      </div>
-        </div>
-    </form>
-  </div>
-</div>
-
-
-<!-- Modal Izin-->
-<div class="modal fade" id="izin" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <form id="redeem_point" class="new_redeem">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Redeem Point</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-          <div class="form-group">
-            <label for="Status">Choose Item</label>
-            <select class="form-control" id="status_redeem">
-              <option value="pin">DSC PENS Pin</option>
-              <option value="stiker">DSC PENS Sticker</option>
-              <option value="kaos">DSC PENS Exclusive T-Shirt</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="keterangan">Input token (Panitia)</label>
-            <input type="password" class="form-control" name="keterangan" id="keterangan_redeem" rows="5"></input>
-          </div>
-          <div class="form-group">
-            <input type="hidden" id="loc1" class="loc" name="custId" value="">
-          </div>
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">OK</button>
-        </div>
-        </div>
-    </form>
-  </div>
-</div>
-
-
-<!-- PIN MODAL -->
-<div class="modal fade" id="pin" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <form id="redeem_point" class="new_pin">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Redeem Point</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-            <div class="form-group">
-              <label for="keterangan">Input token (Panitia)</label>
-              <input type="password" class="form-control" name="keterangan" id="keterangan_pin" rows="5"></input>
+          <div class="modal-body">
+             <div class="form-group">
+              <label for="email_text">E-mail</label>
+              <input type="email" class="form-control email_text" value="" name="email_text"  readonly></input>
             </div>
             <div class="form-group">
-              <input type="hidden" id="redeemPin" value="pin">
+              <label for="Status">Event Type</label>
+              <select class="form-control" id="status_collect">
+                <!-- <option value="workshop1">Campus Workshop 1</option>
+                <option value="workshop2">Campus Workshop 2</option>
+                <option value="workshop3">Campus Workshop 3</option>
+                <option value="hackathon">Hackathon</option> -->
+                <option value="showcase">Showcase</option>
+              </select>
             </div>
+            <div class="form-group" >
+              <label for="keterangan">Token point (DSC PENS Team) manually :</label>
+              <input type="password" size="12" class="qrcode-text form-control" name="keterangan" id="keterangan_collect">
+              <label class="qrcode-text-btn dropzone dz-clickable" id="mydropzone">
+                <!-- <span>or scan qr code</span> --> 
+                <input type=file accept="image/*" capture="environment" onclick="return showQRIntro();" onchange="openQRCamera(this);" tabindex="-1" placeholder="or scan qr code">
+              </label>
+            </div>
+            <div class="form-group">
+              <input type="hidden" id="loc" class="loc" name="custId" value="">
+            </div>
+          </div>
+          <div class="modal-footer bg-whitesmoke br">
+            <button type="submit" id="redeembtn" class="btn btn-primary redeembtn">Collect</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+>>>>>>> 85f36c3497b2ad6bf8ac29b79d7c9303b7755b52
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary">OK</button>
-          </div>
-          </div>
-      </form>
     </div>
+    </form>
+  </div>
+<<<<<<< HEAD
 </div>
 
-<!-- STICKER MODAL -->
-<div class="modal fade" id="sticker" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <form id="redeem_point" class="new_stiker">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Redeem Point</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
+=======
+>>>>>>> 85f36c3497b2ad6bf8ac29b79d7c9303b7755b52
+
+  <!-- MODAL REGISTRATION HACKATHON -->
+  <div class="modal fade" tabindex="-1" role="dialog" id="modal-hackathon">
+    <form id="collect_point" class="new_absen">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Registration</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+             <div class="form-group">
+              <label for="email_text">E-mail</label>
+              <input type="email" class="form-control email_text" name="email" disabled=""></input>
+            </div>
             <div class="form-group">
+              <label for="Status">Event Type</label>
+              <select class="form-control" id="status_collect">
+                <!-- <option value="workshop1">Campus Workshop 1</option>
+                <option value="workshop2">Campus Workshop 2</option>
+                <option value="workshop3">Campus Workshop 3</option> -->
+                <option value="hackathon">Hackathon</option>
+                <!-- <option value="showcase">Showcase</option> -->
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="Status">Session</label>
+              <select class="form-control">
+                <option value="">Day 1</option>
+                <option value="">Day 2</option>
+              </select>
+            </div>
+            <div class="form-group" >
+              <label for="keterangan">Token point (DSC PENS Team) manually :</label>
+              <input type="password" size="12" class="qrcode-text form-control" name="keterangan" id="keterangan_collect">
+              <label class="qrcode-text-btn dropzone dz-clickable" id="mydropzone">
+                <!-- <span>or scan qr code</span> --> 
+                <input type=file accept="image/*" capture="environment" onclick="return showQRIntro();" onchange="openQRCamera(this);" tabindex="-1" placeholder="or scan qr code">
+              </label>
+            </div>
+            <div class="form-group">
+              <input type="hidden" id="loc" class="loc" name="custId" value="">
+            </div>
+          </div>
+          <div class="modal-footer bg-whitesmoke br">
+            <button type="submit" id="redeembtn" class="btn btn-primary redeembtn">Collect</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+    </div>
+    </form>
+  </div>
+<<<<<<< HEAD
+</div>
+
+=======
+>>>>>>> 85f36c3497b2ad6bf8ac29b79d7c9303b7755b52
+
+  <!-- MODAL REGISTRATION WORKSHOP -->
+  <div class="modal fade" tabindex="-1" role="dialog" id="modal-workshop">
+    <form id="collect_point" class="new_absen">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Registration</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+             <div class="form-group">
+              <label for="email_text">E-mail</label>
+              <input type="email" class="form-control email_text" name="email" id="email_text" disabled=""></input>
+            </div>
+            <div class="form-group">
+              <label for="Status">Event Type</label>
+              <select class="form-control" id="status_collect">
+                <option value="workshop1">Campus Workshop 1</option>
+                <option value="workshop2">Campus Workshop 2</option>
+                <option value="workshop3">Campus Workshop 3</option>
+                <!-- <option value="hackathon">Hackathon</option> -->
+                <!-- <option value="showcase">Showcase</option> -->
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="Status">Session</label>
+              <select class="form-control">
+                <option value="">GOOGLE VR</option>
+                <option value="">GOOGLE AI</option>
+                <option value="">GOOGLE Cloud</option>
+                <option value="">GOOGLE Assistant</option>
+              </select>
+            </div>
+            <div class="form-group" >
+              <label for="keterangan">Token point (DSC PENS Team) manually :</label>
+              <input type="password" size="12" class="qrcode-text form-control" name="keterangan" id="keterangan_collect">
+              <label class="qrcode-text-btn dropzone dz-clickable" id="mydropzone">
+                <!-- <span>or scan qr code</span> --> 
+                <input type=file accept="image/*" capture="environment" onclick="return showQRIntro();" onchange="openQRCamera(this);" tabindex="-1" placeholder="or scan qr code">
+              </label>
+            </div>
+            <div class="form-group">
+              <input type="hidden" id="loc" class="loc" name="custId" value="">
+            </div>
+          </div>
+          <div class="modal-footer bg-whitesmoke br">
+            <button type="submit" id="redeembtn" class="btn btn-primary redeembtn">Collect</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+<<<<<<< HEAD
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">OK</button>
+        </div>
+=======
+>>>>>>> 85f36c3497b2ad6bf8ac29b79d7c9303b7755b52
+        </div>
+    </div>
+    </form>
+  </div>
+
+
+  <!-- COLLECT POINTS / REGISTRATION -->
+  <div class="modal fade" tabindex="-1" role="dialog" id="modal-collect">
+    <form id="collect_point" class="new_absen">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Registration</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="Status">Event Type</label>
+              <select class="form-control" id="status_collect">
+                <option value="workshop1">Campus Workshop 1</option>
+                <option value="workshop2">Campus Workshop 2</option>
+                <option value="workshop3">Campus Workshop 3</option>
+                <option value="hackathon">Hackathon</option>
+                <option value="showcase">Showcase</option>
+              </select>
+            </div>
+            <div class="form-group" >
+              <label for="keterangan">Input token (DSC PENS Team) manually :</label>
+              <input type="password" size="12" class="qrcode-text form-control" name="keterangan" id="keterangan_collect">
+              <label class="qrcode-text-btn dropzone dz-clickable" id="mydropzone">
+                <!-- <span>or scan qr code</span> --> 
+                <input type=file accept="image/*" capture="environment" onclick="return showQRIntro();" onchange="openQRCamera(this);" tabindex="-1" placeholder="or scan qr code">
+              </label>
+
+            </div>
+            <!-- <div class="form-group">
+              <label for="keterangan">atau input token (DSC PENS Team) pada kolom berikut :</label>
+              <input type="password" class="form-control" name="keterangan" id="keterangan_collect"></input>
+            </div> -->
+            <div class="form-group">
+              <input type="hidden" id="loc" class="loc" name="custId" value="">
+            </div>
+          </div>
+          <div class="modal-footer bg-whitesmoke br">
+            <button type="submit" id="redeembtn" class="btn btn-primary redeembtn">Collect</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+    </div>
+    </form>
+  </div>
+
+
+
+
+  <!-- REDEEM -->
+  <!-- STICKER -->
+  <div class="modal fade" tabindex="-1" role="dialog" id="sticker">
+    <form id="redeem_point" class="new_stiker">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Redeem Point Sticker</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+
+            <div class="form-group">
+              <label for="jumlah_sticker">Jumlah sticker (Panitia)</label>
+              <input type="number" class="form-control" name="jumlah_sticker" id="jumlah_sticker" rows="5"></input>
+            </div>
+
+
+            <div class="form-group" >
+              <label for="keterangan">Input token (Panitia) manually :</label>
+              <input type="password" size="12" class="qrcode-text form-control" name="keterangan" id="keterangan_sticker">
+              <label class="qrcode-text-btn dropzone dz-clickable" id="mydropzone">
+                <!-- <span>or scan qr code</span> --> 
+                <input type=file accept="image/*" capture="environment" onclick="return showQRIntro();" onchange="openQRCamera(this);" tabindex="-1" placeholder="or scan qr code">
+              </label>
+
+            </div>
+
+            <!-- <div class="form-group">
               <label for="keterangan">Input token (Panitia)</label>
               <input type="password" class="form-control" name="keterangan" id="keterangan_sticker" rows="5"></input>
-            </div>
+            </div> -->
+
             <div class="form-group">
               <input type="hidden" id="redeemSticker" value="stiker">
             </div>
+<<<<<<< HEAD
             <!-- Todo : Membuat Inputan type hiddden gantuangan kunci id=redeemGanci -->
+=======
+          </div>
+          <div class="modal-footer bg-whitesmoke br">
+            <button type="submit" class="btn btn-primary" id="redeemin2">Redeem</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+>>>>>>> 85f36c3497b2ad6bf8ac29b79d7c9303b7755b52
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary">OK</button>
-          </div>
-          </div>
-      </form>
     </div>
-</div>
+    </form>
+  </div>
 
-<!-- TSHIRT MODAL -->
-<div class="modal fade" id="tshirt" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <form id="redeem_point" class="new_kaos">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Redeem Point</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
+
+   <!-- GANTUNGAN -->
+  <div class="modal fade" tabindex="-1" role="dialog" id="modal-gantungan">
+    <form id="redeem_point" class="new_gans">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Redeem Point Keychain</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+
             <div class="form-group">
+              <label for="jumlah_gans">Jumlah gantungan (Panitia)</label>
+              <input type="number" class="form-control" name="jumlah_gans" id="jumlah_gans" rows="5"></input>
+            </div>
+
+            <!-- <div class="form-group">
+              <label for="keterangan">Input token (Panitia)</label>
+              <input type="password" class="form-control" name="keterangan" id="keterangan_gans" rows="5"></input>
+            </div> -->
+        
+            <div class="form-group" >
+              <label for="keterangan">Input token (Panitia) manually :</label>
+              <input type="password" size="12" class="qrcode-text form-control" name="keterangan" id="keterangan_gans">
+              <label class="qrcode-text-btn dropzone dz-clickable" id="mydropzone">
+                <!-- <span>or scan qr code</span> --> 
+                <input type=file accept="image/*" capture="environment" onclick="return showQRIntro();" onchange="openQRCamera(this);" tabindex="-1" placeholder="or scan qr code">
+              </label>
+            </div>
+
+            <div class="form-group">
+              <input type="hidden" id="redeemGans" value="gans">
+            </div>
+
+          </div>
+          <div class="modal-footer bg-whitesmoke br">
+            <button type="submit" class="btn btn-primary " id="redeemin3">Redeem</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+    </div>
+    </form>
+  </div>
+
+
+  <!-- PIN -->
+  <div class="modal fade" tabindex="-1" role="dialog" id="pin">
+    <form id="redeem_point" class="new_pin">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Redeem Point Pin</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+
+            <div class="form-group">
+              <label for="jumlah_pin">Jumlah pin (Panitia)</label>
+              <input type="number" class="form-control" name="jumlah_pin" id="jumlah_pin" rows="5"></input>
+            </div>
+
+            <!-- <div class="form-group">
+              <label for="keterangan">Input token (Panitia)</label>
+              <input type="password" class="form-control" name="keterangan" id="keterangan_pin" rows="5"></input>
+            </div> -->
+
+            <div class="form-group" >
+              <label for="keterangan">Input token (Panitia) manually :</label>
+              <input type="password" size="12" class="qrcode-text form-control" name="keterangan" id="keterangan_pin">
+              <label class="qrcode-text-btn dropzone dz-clickable" id="mydropzone">
+                <!-- <span>or scan qr code</span> --> 
+                <input type=file accept="image/*" capture="environment" onclick="return showQRIntro();" onchange="openQRCamera(this);" tabindex="-1" placeholder="or scan qr code">
+              </label>
+            </div>
+
+            <div class="form-group">
+              <input type="hidden" id="redeemPin" value="pin">
+            </div>
+          </div>
+          <div class="modal-footer bg-whitesmoke br">
+            <button type="submit" class="btn btn-primary " id="redeemin1">Redeem</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+    </div>
+    </form>
+  </div>
+
+
+  <!-- SHIRT -->
+  <div class="modal fade" tabindex="-1" role="dialog" id="tshirt">
+    <form id="redeem_point" class="new_kaos">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Redeem Point T-Shirt</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+
+            <div class="form-group">
+              <label for="jumlah_tshirt">Jumlah tshirt (Panitia)</label>
+              <input type="number" class="form-control" name="jumlah_tshirt" id="jumlah_tshirt" rows="5"></input>
+            </div>
+
+            <!-- <div class="form-group">
               <label for="keterangan">Input token (Panitia)</label>
               <input type="password" class="form-control" name="keterangan" id="keterangan_kaos" rows="5"></input>
+            </div> -->
+
+            <div class="form-group" >
+              <label for="keterangan">Input token (Panitia) manually :</label>
+              <input type="password" size="12" class="qrcode-text form-control" name="keterangan" id="keterangan_kaos">
+              <label class="qrcode-text-btn dropzone dz-clickable" id="mydropzone">
+                <!-- <span>or scan qr code</span> --> 
+                <input type=file accept="image/*" capture="environment" onclick="return showQRIntro();" onchange="openQRCamera(this);" tabindex="-1" placeholder="or scan qr code">
+              </label>
             </div>
+
             <div class="form-group">
               <input type="hidden" id="redeemKaos" value="kaos">
             </div>
+          </div>
+          <div class="modal-footer bg-whitesmoke br">
+            <button type="submit" class="btn btn-primary" id="redeemin4">Redeem</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary">OK</button>
-          </div>
-          </div>
-      </form>
     </div>
-</div>
+    </form>
+  </div>
+  <!-- END: modal -->
 
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="asset/front/vendor/jquery/jquery.min.js"></script>
-    <script src="asset/front/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- General JS Scripts -->
+  <script src="asset_dua/modules/jquery.min.js"></script>
+  <script src="asset_dua/modules/popper.js"></script>
+  <script src="asset_dua/modules/tooltip.js"></script>
+  <script src="asset_dua/modules/bootstrap/js/bootstrap.min.js"></script>
+  <script src="asset_dua/modules/nicescroll/jquery.nicescroll.min.js"></script>
+  <script src="asset_dua/modules/moment.min.js"></script>
+  <script src="asset_dua/js/stisla.js"></script>
 
+<<<<<<< HEAD
     <!-- Plugin JavaScript -->
     <script src="asset/front/vendor/jquery-easing/jquery.easing.min.js"></script>
     <!--<script src="asset/front/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>-->
     <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
     <script>
+=======
+  <!-- JS Libraies -->
+  <script src="asset_dua/modules/jquery.sparkline.min.js"></script>
+  <script src="asset_dua/modules/chart.min.js"></script>
+  <script src="asset_dua/modules/owlcarousel2/dist/owl.carousel.min.js"></script>
+  <script src="asset_dua/modules/summernote/summernote-bs4.js"></script>
+  <script src="asset_dua/modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
+
+  <!-- Page Specific JS File -->
+  <script src="asset_dua/js/page/index.js"></script>
+
+  <!-- Template JS File -->
+  <script src="asset_dua/js/scripts.js"></script>
+  <script src="asset_dua/js/custom.js"></script>
+  <script src="asset_dua/custom/qr_reader.js"></script>
+  <script>
+    function openQRCamera(node) {
+      var reader = new FileReader();
+      reader.onload = function() {
+        node.value = "";
+        qrcode.callback = function(res) {
+          if(res instanceof Error) {
+            alert("No QR code found. Please make sure the QR code is within the camera's frame and try again.");
+          } else {
+            node.parentNode.previousElementSibling.value = res;
+          }
+        };
+        qrcode.decode(reader.result);
+      };
+      reader.readAsDataURL(node.files[0]);
+    }
+
+    function showQRIntro() {
+      return confirm("Use your camera to take a picture of a QR code.");
+    }
+  </script>
+  <!-- END: Scan -->
+
+
+
+  <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+  <script>
+>>>>>>> 85f36c3497b2ad6bf8ac29b79d7c9303b7755b52
       if('serviceWorker' in navigator) {
         navigator.serviceWorker.register('sw.js')
           .then(function() {
@@ -380,30 +1042,44 @@
 
               x.innerHTML = data.display_name;
               loc.value = data.display_name;
-              loc1.value = data.display_name;
           });
       }
     </script>
-        
-<script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyBA9GF6vq0z5_qUWrVOUzaGy1P--ZqDQXM",
-    authDomain: "dscpens-event.firebaseapp.com",
-    databaseURL: "https://dscpens-event.firebaseio.com",
-    projectId: "dscpens-event",
-    storageBucket: "dscpens-event.appspot.com",
-    messagingSenderId: "980829139366"
-  };
-  firebase.initializeApp(config);
-</script>
-        
-<script src="user.js"></script>
-
+    <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyBA9GF6vq0z5_qUWrVOUzaGy1P--ZqDQXM",
+        authDomain: "dscpens-event.firebaseapp.com",
+        databaseURL: "https://dscpens-event.firebaseio.com",
+        projectId: "dscpens-event",
+        storageBucket: "dscpens-event.appspot.com",
+        messagingSenderId: "980829139366"
+      };
+      firebase.initializeApp(config);
+    </script>
+    <script src="user.js"></script>
     <script type="text/javascript">
+        var token_workshop1;
+        var token_workshop2;
+        var token_workshop3;
+        var token_codeathon;
+        var token_roadshowfinal;
+        var token_kaos;
+        var token_stiker;
+        var token_pin;
+        var token_gantungan;
+
+        var redeemBtn;
+        var emailText2;
+        var redeemin1;
+        var redeemin2;
+        var redeemin3;
+        var redeemin4;
+
         var tokenInput_collect;
         var tokenInput_redeem;
+        var tokenInput_gans;
         var tokenInput_pin;
         var tokenInput_sticker;
         var tokenInput_ganci; //Todo Menambahkan value input ke firebase
@@ -414,81 +1090,134 @@
         var point_text;
         var user_email;
         var uid;
+        var rGans
         var rPin;
         var rSticker;
         var rGanci;
         var rKaos;
-         document.addEventListener("DOMContentLoaded", function(){
+        var jGans;
+        var jSticker;
+        var jPin;
+        var jKaos;
+        document.addEventListener("DOMContentLoaded", function(){
+            
+             redeemBtn = document.getElementById("redeembtn");
              tokenInput_collect = document.getElementById("keterangan_collect");
              tokenInput_redeem = document.getElementById("keterangan_redeem");
+
+             tokenInput_gans = document.getElementById("keterangan_gans");
              tokenInput_pin = document.getElementById("keterangan_pin");
              tokenInput_sticker = document.getElementById("keterangan_sticker");
              //Todo token input ganci
              tokenInput_kaos = document.getElementById("keterangan_kaos");
+
              status_collect = document.getElementById("status_collect");
              status_redeem = document.getElementById("status_redeem");
              email_text = document.getElementById("email_text");
+             emailText2  = document.getElementsByName("email_text");
              point_text = document.getElementById("point_text");
+
+             redeemin1 = document.getElementById("redeemin1");
+             redeemin2 = document.getElementById("redeemin2");
+             redeemin3 = document.getElementById("redeemin3");
+             redeemin4 = document.getElementById("redeemin4");
+
+             rGans = document.getElementById("redeemGans"); 
              rPin = document.getElementById("redeemPin");
              rSticker = document.getElementById("redeemSticker");
              //Todo token input Radeem ganci
              rKaos = document.getElementById("redeemKaos");
+
+             jGans = document.getElementById("jumlah_gans");
+             jPin = document.getElementById("jumlah_pin");
+             jSticker = document.getElementById("jumlah_sticker");
+             jKaos = document.getElementById("jumlah_tshirt");
              token = [];
 //             });
         });
         
-   firebase.database().ref('/list_token/showcase/').once('value').then(function(snapshot) {                      
+   firebase.database().ref('/list_token/').once('value').then(function(snapshot) {                      
                         snapshot.forEach(function(child){
-                            /* alert(child.val()); */
                             token.push(child.val())
                         });
-                        /* console.log(token[0].token); */
-                        coll = token[0].token;
-                        redm = token[1].token;
-                        console.log(coll);
-                        console.log(redm);
-                        /* alert(wks + shw); */
+                        var list = token;
+                        token_workshop1 = token[0].token;
+                        token_workshop2 = token[1].token;
+                        token_workshop3 = token[2].token;
+                        token_codeathon = token[3].token;
+                        token_roadshowfinal = token[4].token;
+                        token_kaos = token[5].token;
+                        token_stiker = token[6].token;
+                        token_pin = token[7].token;
+                        token_gantungan = token[8].token;
+                        // console.log(list);
+                        /* coll = token[0].token;
+                        redm = token[1].token; */
+                        /* console.log(coll);
+                        console.log(redm); */
                     });
                            
 
-//        for(var i=0;i<10;i++){
-//              generateTokenWorkshop();
-//            generateTokenShowcase();
-//          }
+       /* for(var i=0;i<8;i++){
+             //generateTokenWorkshop();
+           //generateTokenShowcase();
+           //generateTokenWorshop1();
+         } */
       firebase.auth().onAuthStateChanged(function (user) {
             if (user) {
             var point_data;
             user_email = firebase.auth().currentUser.email;
-             email_text.innerHTML = "Email : "+user_email;
+             email_text.innerHTML = user_email;
+             var i;
+              for (i = 0; i < emailText2.length; i++) {
+                console.log(i);
+                if (emailText2[i].type == "email") {
+                    emailText2[i].value = user_email;
+                  }
+              }
+            //  emailText2[0].value =  user_email;
                     uid = firebase.auth().currentUser.uid;
             firebase.database().ref('users/'+uid).once('value')
                         .then(function(snapshot){
                 point_data = snapshot.val().point;
-             point_text.innerHTML = "Points : "+point_data;
+                point_text.innerHTML = "Your points: " + point_data;
              });
                 var point_db;
                 var action = "";
                 var trans_status = false;
                 $('.new_absen').submit(function(e){
                     action = "collect";
+                    redeemBtn.disabled = true;
+                    redeemBtn.innerHTML = "Colecting...";
+
                     submitData();
                     e.preventDefault();    
                 });
                 
                 $('.new_pin').submit(function(e){
                     action = "pin";
+                    redeemin1.innerHTML = "Please Wait..."
+                    submitData();
+                    e.preventDefault();    
+                });
+
+                $('.new_gans').submit(function(e){
+                    action = "gans";
+                    redeemin3.innerHTML = "Please Wait..."
                     submitData();
                     e.preventDefault();    
                 });
                 
                 $('.new_stiker').submit(function(e){
                     action = "stiker";
+                    redeemin2.innerHTML = "Please Wait..."
                     submitData();
                     e.preventDefault();    
                 });
 
                 $('.new_kaos').submit(function(e){
                     action = "kaos";
+                    redeemin4.innerHTML = "Please Wait..."
                     submitData();
                     e.preventDefault();    
                 });
@@ -556,59 +1285,169 @@
                      //   alert(status_collect.value.toLowerCase());
                     
                     if(action == "collect"){
+<<<<<<< HEAD
                       if(status_collect.value.toLowerCase() == "workshop" && tokenInput_collect.value.toLowerCase() == coll) {
                         point_db = snapshot.val().point+5;
                         refreshPoint();
                         alert("Poin Collection succeed.\nPoint : "+point_db);
 
+=======
+                      if(status_collect.value.toLowerCase() == "workshop1" && tokenInput_collect.value.toLowerCase() == token_workshop1) {
+                        point_db = snapshot.val().point+30;
+                        point_text.innerHTML = "Points: " + point_db;
+                        alert("Poin Collection succeed.\nPoint : "+point_db);
+                        redeemBtn.innerHTML = "Success";
+>>>>>>> 85f36c3497b2ad6bf8ac29b79d7c9303b7755b52
                       }
                     
-                      if(status_collect.value.toLowerCase() == "workshop" && tokenInput_collect.value.toLowerCase() != coll) {
+                      if(status_collect.value.toLowerCase() == "workshop1" && tokenInput_collect.value.toLowerCase() != token_workshop1) {
                         alert("invalid token");
+                        redeemBtn.innerHTML = "try again";
+                        redeemBtn.disabled = false;
+                      }
+
+                      if(status_collect.value.toLowerCase() == "workshop2" && tokenInput_collect.value.toLowerCase() == token_workshop2) {
+                        point_db = snapshot.val().point+30;
+                        point_text.innerHTML = "Points: " + point_db;
+                        alert("Poin Collection succeed.\nPoint : "+point_db);
+                        redeemBtn.innerHTML = "Success";
                       }
                     
+<<<<<<< HEAD
                       if(status_collect.value.toLowerCase() == "showcase" && tokenInput_collect.value.toLowerCase() == coll) {
                         point_db = snapshot.val().point+3;
                         refreshPoint();
+=======
+                      if(status_collect.value.toLowerCase() == "workshop2" && tokenInput_collect.value.toLowerCase() != token_workshop2) {
+                        alert("invalid token");
+                        redeemBtn.innerHTML = "try again";
+                        redeemBtn.disabled = false;
+                      }
+
+                      if(status_collect.value.toLowerCase() == "workshop3" && tokenInput_collect.value.toLowerCase() == token_workshop3) {
+                        point_db = snapshot.val().point+40;
+                        point_text.innerHTML = "Points: " + point_db;
+>>>>>>> 85f36c3497b2ad6bf8ac29b79d7c9303b7755b52
                         alert("Poin Collection succeed.\nPoint : "+point_db);
+                        redeemBtn.innerHTML = "Success";
+                      }
+                    
+                      if(status_collect.value.toLowerCase() == "workshop3" && tokenInput_collect.value.toLowerCase() != token_workshop3) {
+                        alert("invalid token");
+                        redeemBtn.innerHTML = "try again";
+                        redeemBtn.disabled = false;
+                      }
+
+                      if(status_collect.value.toLowerCase() == "hackathon" && tokenInput_collect.value.toLowerCase() == token_codeathon) {
+                        point_db = snapshot.val().point+30;
+                        point_text.innerHTML = "Points: " + point_db;
+                        alert("Poin Collection succeed.\nPoint : "+point_db);
+                        redeemBtn.innerHTML = "Success";
                       }         
       
-                      if(status_collect.value.toLowerCase() == "showcase" && tokenInput_collect.value.toLowerCase() != coll) {
+                      if(status_collect.value.toLowerCase() == "hackathon" && tokenInput_collect.value.toLowerCase() != token_codeathon) {
                         alert("invalid token");
+                        redeemBtn.innerHTML = "try again";
+                        redeemBtn.disabled = false;
+                      }
+                    
+                      if(status_collect.value.toLowerCase() == "showcase" && tokenInput_collect.value.toLowerCase() == token_roadshowfinal) {
+                        point_db = snapshot.val().point+20;
+                        point_text.innerHTML = "Points: " + point_db;
+                        alert("Poin Collection succeed.\nPoint : "+point_db);
+                        redeemBtn.innerHTML = "Success";
+                      }         
+      
+                      if(status_collect.value.toLowerCase() == "showcase" && tokenInput_collect.value.toLowerCase() != token_roadshowfinal) {
+                        alert("invalid token");
+                        redeemBtn.innerHTML = "try again";
+                        redeemBtn.disabled = false;
                       }
                     
                     }
 
-                    if(action == "pin"){
-                      if(rPin.value.toLowerCase() == "pin" && tokenInput_pin.value.toLowerCase() == redm){
-                        point_db = snapshot.val().point-20;
-                        refreshPoint();
+                    if(action == "gans"){
+                      if(rGans.value.toLowerCase() == "gans" && tokenInput_gans.value.toLowerCase() == token_gantungan){
+                        point_db = snapshot.val().point - (jGans.value * 15);
+                        
                         if(point_db >=0 ) {
+                          point_text.innerHTML = "Points: " + point_db;
                           alert("Redeem succeed.\nPoint : "+point_db);
+                          redeemin3.innerHTML = "Redeem Again";
                         }
                         else{
+                          redeemin3.innerHTML = "Try Again";
                           alert("Sorry you dont have enough point.\nNeed more "+point_db);
                         }
                       }
                        
-                      if(rPin.value.toLowerCase() == "pin" && tokenInput_pin.value.toLowerCase() != redm)
+                      if(rGans.value.toLowerCase() == "gans" && tokenInput_gans.value.toLowerCase() != token_gantungan)
+                      {
+                        redeemin3.innerHTML = "Try Again";
                         alert('invalid token');
+                        
+                      }
+                        
                     }
 
-                    if(action == "stiker"){
-                      if(rSticker.value.toLowerCase() == "stiker" && tokenInput_sticker.value.toLowerCase() == redm) {
-                        point_db = snapshot.val().point-10;
+                    if(action == "pin"){
+<<<<<<< HEAD
+                      if(rPin.value.toLowerCase() == "pin" && tokenInput_pin.value.toLowerCase() == redm){
+                        point_db = snapshot.val().point-20;
                         refreshPoint();
+=======
+                      if(rPin.value.toLowerCase() == "pin" && tokenInput_pin.value.toLowerCase() == token_pin){
+                        point_db = snapshot.val().point - (jPin.value * 10);
+                        
+>>>>>>> 85f36c3497b2ad6bf8ac29b79d7c9303b7755b52
                         if(point_db >=0 ) {
+                          point_text.innerHTML = "Points: " + point_db;
                           alert("Redeem succeed.\nPoint : "+point_db);
+                          redeemin1.innerHTML = "Redeem Again";
                         }
                         else{
                           alert("Sorry you dont have enough point.\nNeed more "+point_db);
+                          redeemin1.innerHTML = "Try Again";
+                        }
+                      }
+                       
+                      if(rPin.value.toLowerCase() == "pin" && tokenInput_pin.value.toLowerCase() != token_pin)
+                      {
+                        redeemin1.innerHTML = "Try Again";
+                        alert('invalid token');
+                      }
+
+                        
+                        
+                    }
+
+                    if(action == "stiker"){
+<<<<<<< HEAD
+                      if(rSticker.value.toLowerCase() == "stiker" && tokenInput_sticker.value.toLowerCase() == redm) {
+                        point_db = snapshot.val().point-10;
+                        refreshPoint();
+=======
+                      if(rSticker.value.toLowerCase() == "stiker" && tokenInput_sticker.value.toLowerCase() == token_stiker) {
+                        point_db = snapshot.val().point - (jSticker.value * 10);
+                      
+>>>>>>> 85f36c3497b2ad6bf8ac29b79d7c9303b7755b52
+                        if(point_db >=0 ) {
+                          point_text.innerHTML = "Points: " + point_db;
+                          alert("Redeem succeed.\nPoint : "+point_db);
+                          redeemin2.innerHTML = "Redeem Again";
+                        }
+                        else{
+                          alert("Sorry you dont have enough point.\nNeed more "+point_db);
+                          redeemin2.innerHTML = "Redeem Again";
                         }
                       }
                         
-                      if(rSticker.value.toLowerCase() == "stiker" && tokenInput_sticker.value.toLowerCase() != redm)
+                      if(rSticker.value.toLowerCase() == "stiker" && tokenInput_sticker.value.toLowerCase() != token_stiker)
+                      {
                         alert('invalid token');
+                        redeemin2.innerHTML = "Try Again";
+                      }
+                        
                     }
 
                     if(action == "ganci"){
@@ -628,19 +1467,31 @@
                             }
 
                     if(action == "kaos") {
+<<<<<<< HEAD
                       if(rKaos.value.toLowerCase() == "kaos" && tokenInput_kaos.value.toLowerCase() == redm) {
                         point_db = snapshot.val().point-150;
                         refreshPoint();
+=======
+                      if(rKaos.value.toLowerCase() == "kaos" && tokenInput_kaos.value.toLowerCase() == token_kaos) {
+                        point_db = snapshot.val().point - (jKaos.value * 150);
+>>>>>>> 85f36c3497b2ad6bf8ac29b79d7c9303b7755b52
                         if(point_db >=0 ) {
+                          point_text.innerHTML = "Points: " + point_db;
                           alert("Redeem succeed.\nPoint : "+point_db);
+                          redeemin4.innerHTML = "Redeem Again";
                         }
                         else{
                           alert("Sorry you dont have enough point.\nNeed more "+point_db);
+                          redeemin4.innerHTML = "Redeem Again";
                         }
                       }
                         
-                      if(rKaos.value.toLowerCase() == "kaos" && tokenInput_kaos.value.toLowerCase() != redm)
+                      if(rKaos.value.toLowerCase() == "kaos" && tokenInput_kaos.value.toLowerCase() != token_kaos)
+                      {
+                        redeemin4.innerHTML = "Try Again";
                         alert('invalid token');
+                      }
+                        
                     }
                         if(point_db >=0 ){
                         firebase.database().ref('users/' + uid+"/").update({
@@ -660,7 +1511,6 @@
                         }
                     });
                     
-                    
                     return false;
                 
             }
@@ -671,7 +1521,6 @@
                 });
 
     </script>
-   
     <script>
       
       /**********************\
@@ -786,41 +1635,7 @@
 
     startTime();
     </script>
-    <script type="text/javascript">
-      function showTime1(){
-        var date = new Date();
-        var h = date.getHours(); // 0 - 23
-        var m = date.getMinutes(); // 0 - 59
-        var s = date.getSeconds(); // 0 - 59
-        var session = "AM";
-        
-        if(h == 0){
-            h = 12;
-        }
-        
-        if(h > 12){
-            h = h - 12;
-            session = "PM";
-        }
-        
-        h = (h < 10) ? "0" + h : h;
-        m = (m < 10) ? "0" + m : m;
-        s = (s < 10) ? "0" + s : s;
-        
-        var time = h + ":" + m + ":" + s + " " + session;
-        document.getElementById("MyClockDisplay1").innerText = time;
-        document.getElementById("MyClockDisplay1").textContent = time;
-        
-        setTimeout(showTime1, 1000);
-        
-    }
-        showTime1();
-    </script>
-    <script src="asset/front/js/jqBootstrapValidation.js"></script>
-    <script src="asset/front/js/contact_me.js"></script>
+    <script src="asset_dua/fancybox/dist/jquery.fancybox.js" type="text/javascript"></script>
 
-    <script src="asset/front/js/freelancer.js"></script>
-
-  </body>
-
+</body>
 </html>

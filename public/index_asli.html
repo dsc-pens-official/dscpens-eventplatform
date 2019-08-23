@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>DSC PENS - Event Platform</title>
+      
+    <!-- Bootstrap Core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="../vendor/morrisjs/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Bootstrap core CSS -->
+    <link href="asset/front/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="asset/front/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- Plugin CSS -->
+    <link href="asset/front/vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for this template -->
+    <link href="asset/front/css/freelancer.css" rel="stylesheet">
+
+    <link rel="manifest" href="manifest.json">
+
+  </head>
+
+  <body onload="getLocation()"> 
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">DSC PENS - Event Platform</a>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header id="page-top" class="masthead bg-primary text-white text-center">
+      <div class="container">
+        <img  class="img-fluid mb-3 d-block mx-auto" width="300" height="300" src="dscpens.png" alt="">
+        <h1 id="MyClockDisplay" class="text-uppercase mb-0"></h1>
+        <h6 id="demo" name="lokasi" ></h6>
+      </div>
+    </header>
+
+    <!-- Portfolio Grid Section -->
+    <section id="portfolio">
+      <div class="container" style="width: 100%!important;">
+        <h2 style="margin-bottom:40px!important;" class="text-center text-uppercase text-secondary mb-0">REDEEM POINT</h2>
+        <div class="row">
+          <div style="margin-bottom: 30px;" class="col-md-6 col-lg-4">
+            <div class="card" style="width: 18rem;">
+              <img class="card-img-top" src="dsc-bg.png" alt="Card image cap">
+              <div class="card-body">
+                <center>
+                  <h5 class="card-title">DSC PENS Pin</h5>
+                  <a href="#" data-toggle="modal" data-target="#pin" class="btn bg-secondary"><b>REDEEM</b></a>
+                </center>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-bottom: 30px;" class="col-md-6 col-lg-4">
+            <div class="card" style="width: 18rem;">
+              <img class="card-img-top" src="dsc-bg.png" alt="Card image cap">
+              <div class="card-body">
+                  <center>
+                    <h5 class="card-title">DSC PENS Sticker</h5>
+                    <a href="#" data-toggle="modal" data-target="#sticker" class="btn bg-secondary"><b>REDEEM</b></a>
+                  </center>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-bottom: 30px;" class="col-md-6 col-lg-4">
+            <div class="card" style="width: 18rem;">
+              <img class="card-img-top" src="dsc-bg.png" alt="Card image cap">
+              <div class="card-body">
+                  <center>
+                    <h5 class="card-title">DSC PENS Exlusive T-Shirt</h5>
+                    <a href="#" data-toggle="modal" data-target="#tshirt" class="btn bg-secondary"><b>REDEEM</b></a>
+                  </center>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+      
+      <nav class="navbar navbar-expand-lg bg-secondary fixed-bottom text-uppercase" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-bottom"></a>
+        <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+<!--
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#dashboard">Dashboard</a>
+            </li>
+-->
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" data-toggle="modal" data-target="#profile">Profile</a>
+            </li><li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" data-toggle="modal" data-target="#absen">Collect Point</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a href="#portfolio" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger">Redeem Point</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" id="logout">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+      
+<!-- Modal Profile-->
+<div class="modal fade" id="profile" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <form id="collect_point" class="new_absen">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Profile</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <h6 id="email_text">Email : </h6>
+          <h6 id="point_text">Points : </h6> 
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+      </div>
+        </div>
+    </form>
+  </div>
+</div>
+      
+
+<!-- Modal Absen-->
+<div class="modal fade" id="absen" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <form id="collect_point" class="new_absen">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Collect Poin</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <div class="form-group">
+            <label for="Status">Event Type</label>
+            <select class="form-control" id="status_collect">
+              <option value="workshop">Workshop</option>
+              <option value="showcase">Showcase</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="keterangan">Input token (DSC PENS Team)</label>
+            <input type="password" class="form-control" name="keterangan" id="keterangan_collect"></input>
+          </div>
+          <div class="form-group">
+            <input type="hidden" id="loc" class="loc" name="custId" value="">
+          </div>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">OK</button>
+      </div>
+        </div>
+    </form>
+  </div>
+</div>
+      
+
+<!-- Modal Izin-->
+<div class="modal fade" id="izin" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <form id="redeem_point" class="new_redeem">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Redeem Point</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <div class="form-group">
+            <label for="Status">Choose Item</label>
+            <select class="form-control" id="status_redeem">
+              <option value="pin">DSC PENS Pin</option>
+              <option value="stiker">DSC PENS Sticker</option>
+              <option value="kaos">DSC PENS Exclusive T-Shirt</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="keterangan">Input token (Panitia)</label>
+            <input type="password" class="form-control" name="keterangan" id="keterangan_redeem" rows="5"></input>
+          </div>
+          <div class="form-group">
+            <input type="hidden" id="loc1" class="loc" name="custId" value="">
+          </div>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">OK</button>
+        </div>
+        </div>
+    </form>
+  </div>
+</div>
+
+
+<!-- PIN MODAL -->
+<div class="modal fade" id="pin" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <form id="redeem_point" class="new_pin">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Redeem Point</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="form-group">
+              <label for="keterangan">Input token (Panitia)</label>
+              <input type="password" class="form-control" name="keterangan" id="keterangan_pin" rows="5"></input>
+            </div>
+            <div class="form-group">
+              <input type="hidden" id="redeemPin" value="pin">
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">OK</button>
+          </div>
+          </div>
+      </form>
+    </div>
+</div>
+
+<!-- STICKER MODAL -->
+<div class="modal fade" id="sticker" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <form id="redeem_point" class="new_stiker">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Redeem Point</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="form-group">
+              <label for="keterangan">Input token (Panitia)</label>
+              <input type="password" class="form-control" name="keterangan" id="keterangan_sticker" rows="5"></input>
+            </div>
+            <div class="form-group">
+              <input type="hidden" id="redeemSticker" value="stiker">
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">OK</button>
+          </div>
+          </div>
+      </form>
+    </div>
+</div>
+
+<!-- TSHIRT MODAL -->
+<div class="modal fade" id="tshirt" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <form id="redeem_point" class="new_kaos">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Redeem Point</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="form-group">
+              <label for="keterangan">Input token (Panitia)</label>
+              <input type="password" class="form-control" name="keterangan" id="keterangan_kaos" rows="5"></input>
+            </div>
+            <div class="form-group">
+              <input type="hidden" id="redeemKaos" value="kaos">
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">OK</button>
+          </div>
+          </div>
+      </form>
+    </div>
+</div>
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="asset/front/vendor/jquery/jquery.min.js"></script>
+    <script src="asset/front/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="asset/front/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="asset/front/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+    <script>
+      if('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('sw.js')
+          .then(function() {
+                console.log('Service Worker Registered');
+          });
+      }
+      var x = document.getElementById("demo");
+      var loc = document.getElementsByClassName("loc")[0];
+      var loc1 = document.getElementById("loc1");
+
+      function getLocation() {
+          if (navigator.geolocation) {
+              navigator.geolocation.getCurrentPosition(showPosition);
+          } else { 
+              x.innerHTML = "Geolocation is not supported by this browser.";
+          }
+      }
+
+      function showPosition(position) {
+          
+
+          var locAPI = "https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat="+position.coords.latitude+"&lon="+ position.coords.longitude;
+          //x.innerHTML = locAPI;
+          $.getJSON(locAPI, function(data) {
+              console.log(data);
+
+              x.innerHTML = data.display_name;
+              loc.value = data.display_name;
+              loc1.value = data.display_name;
+          });
+      }
+    </script>
+        
+<script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBA9GF6vq0z5_qUWrVOUzaGy1P--ZqDQXM",
+    authDomain: "dscpens-event.firebaseapp.com",
+    databaseURL: "https://dscpens-event.firebaseio.com",
+    projectId: "dscpens-event",
+    storageBucket: "dscpens-event.appspot.com",
+    messagingSenderId: "980829139366"
+  };
+  firebase.initializeApp(config);
+</script>
+        
+<script src="user.js"></script>
+
+    <script type="text/javascript">
+        var tokenInput_collect;
+        var tokenInput_redeem;
+        var tokenInput_pin;
+        var tokenInput_sticker;
+        var tokenInput_kaos;
+        var status_collect;
+        var status_redeem;
+        var email_text;
+        var point_text;
+        var user_email;
+        var uid;
+        var rPin;
+        var rSticker;
+        var rKaos;
+         document.addEventListener("DOMContentLoaded", function(){
+             tokenInput_collect = document.getElementById("keterangan_collect");
+             tokenInput_redeem = document.getElementById("keterangan_redeem");
+             tokenInput_pin = document.getElementById("keterangan_pin");
+             tokenInput_sticker = document.getElementById("keterangan_sticker");
+             tokenInput_kaos = document.getElementById("keterangan_kaos");
+             status_collect = document.getElementById("status_collect");
+             status_redeem = document.getElementById("status_redeem");
+             email_text = document.getElementById("email_text");
+             point_text = document.getElementById("point_text");
+             rPin = document.getElementById("redeemPin");
+             rSticker = document.getElementById("redeemSticker");
+             rKaos = document.getElementById("redeemKaos");
+             token = [];
+//             });
+        });
+        
+   firebase.database().ref('/list_token/showcase/').once('value').then(function(snapshot) {                      
+                        snapshot.forEach(function(child){
+                            /* alert(child.val()); */
+                            token.push(child.val())
+                        });
+                        /* console.log(token[0].token); */
+                        coll = token[0].token;
+                        redm = token[1].token;
+                        console.log(coll);
+                        console.log(redm);
+                        /* alert(wks + shw); */
+                    });
+                           
+
+//        for(var i=0;i<10;i++){
+//              generateTokenWorkshop();
+//            generateTokenShowcase();
+//          }
+      firebase.auth().onAuthStateChanged(function (user) {
+            if (user) {
+            var point_data;
+            user_email = firebase.auth().currentUser.email;
+             email_text.innerHTML = "Email : "+user_email;
+                    uid = firebase.auth().currentUser.uid;
+            firebase.database().ref('users/'+uid).once('value')
+                        .then(function(snapshot){
+                point_data = snapshot.val().point;
+             point_text.innerHTML = "Points : "+point_data;
+             });
+                var point_db;
+                var action = "";
+                var trans_status = false;
+                $('.new_absen').submit(function(e){
+                    action = "collect";
+                    submitData();
+                    e.preventDefault();    
+                });
+                
+                $('.new_pin').submit(function(e){
+                    action = "pin";
+                    submitData();
+                    e.preventDefault();    
+                });
+                
+                $('.new_stiker').submit(function(e){
+                    action = "stiker";
+                    submitData();
+                    e.preventDefault();    
+                });
+
+                $('.new_kaos').submit(function(e){
+                    action = "kaos";
+                    submitData();
+                    e.preventDefault();    
+                });
+                
+                function submitData(){
+                    var date = new Date();
+                    var hours = date.getHours(); // 0 - 23
+                    var minutes = date.getMinutes(); // 0 - 59
+                    var second = date.getSeconds(); // 0 - 59
+                    var dt = date.getDate(); //tanggal
+                    var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+                    var year = date.getFullYear() // tahun
+                    var session = "AM";
+
+                    if(hours == 0){
+                        hours = 12;
+                    }
+                    
+                    if(hours > 12){
+                        hours = hours - 12;
+                        session = "PM";
+                    }
+                    
+                    hours = (hours < 10) ? "0" + hours : hours;
+                    minutes = (minutes < 10) ? "0" + minutes : minutes;
+                    second = (second < 10) ? "0" + second : second;
+                    
+                    var time = hours + ":" + minutes + ":" + second + " " + session;
+                    var tanggal = dt + " " + months[date.getMonth()] + " " + year;
+
+                    
+                    var entry = {};
+                    entry.status = $(this).find('[id="status"]').val();
+                    entry.keterangan = $(this).find('[name="keterangan"]').val();
+                    entry.lokasi = $(this).find('[class="loc"]').val();
+                    entry.time = time;
+                    entry.tanggal = tanggal;
+                    entry.user = user.email;  var status; var wrong = true;
+                    
+                    firebase.database().ref('/list_token/showcase/').once('value').then(function(snapshot) {
+                      
+                        snapshot.forEach(function(child){
+                            if(child.val().token == tokenInput_collect.value){
+                                wrong = false;
+                                status = true;
+                            }
+                        });
+                        console.log("END");
+                     if(wrong == true){
+                         console.log("didnt same");
+                     }
+                     else{
+                         console.log("same");
+                     }
+                        return false;
+                    });        
+                    var Absen = firebase.database().ref('users').child(uid);
+                    
+                    firebase.database().ref('users/'+uid).once('value')
+                        .then(function(snapshot){
+                     //   alert(status_collect.value.toLowerCase());
+                    
+                    if(action == "collect"){
+                      if(status_collect.value.toLowerCase() == "workshop" && tokenInput_collect.value.toLowerCase() == coll) {
+                        point_db = snapshot.val().point+5;
+                        alert("Poin Collection succeed.\nPoint : "+point_db);
+                      }
+                    
+                      if(status_collect.value.toLowerCase() == "workshop" && tokenInput_collect.value.toLowerCase() != coll) {
+                        alert("invalid token");
+                      }
+                    
+                      if(status_collect.value.toLowerCase() == "showcase" && tokenInput_collect.value.toLowerCase() == coll) {
+                        point_db = snapshot.val().point+3;
+                        alert("Poin Collection succeed.\nPoint : "+point_db);
+                      }         
+      
+                      if(status_collect.value.toLowerCase() == "showcase" && tokenInput_collect.value.toLowerCase() != coll) {
+                        alert("invalid token");
+                      }
+                    
+                    }
+
+                    if(action == "pin"){
+                      if(rPin.value.toLowerCase() == "pin" && tokenInput_pin.value.toLowerCase() == redm){
+                        point_db = snapshot.val().point-10;
+                        if(point_db >=0 ) {
+                          alert("Redeem succeed.\nPoint : "+point_db);
+                        }
+                        else{
+                          alert("Sorry you dont have enough point.\nNeed more "+point_db);
+                        }
+                      }
+                       
+                      if(rPin.value.toLowerCase() == "pin" && tokenInput_pin.value.toLowerCase() != redm)
+                        alert('invalid token');
+                    }
+
+                    if(action == "stiker"){
+                      if(rSticker.value.toLowerCase() == "stiker" && tokenInput_sticker.value.toLowerCase() == redm) {
+                        point_db = snapshot.val().point-7;
+                        if(point_db >=0 ) {
+                          alert("Redeem succeed.\nPoint : "+point_db);
+                        }
+                        else{
+                          alert("Sorry you dont have enough point.\nNeed more "+point_db);
+                        }
+                      }
+                        
+                      if(rSticker.value.toLowerCase() == "stiker" && tokenInput_sticker.value.toLowerCase() != redm)
+                        alert('invalid token');
+                    }
+
+                    if(action == "kaos") {
+                      if(rKaos.value.toLowerCase() == "kaos" && tokenInput_kaos.value.toLowerCase() == redm) {
+                        point_db = snapshot.val().point-50;
+                        if(point_db >=0 ) {
+                          alert("Redeem succeed.\nPoint : "+point_db);
+                        }
+                        else{
+                          alert("Sorry you dont have enough point.\nNeed more "+point_db);
+                        }
+                      }
+                        
+                      if(rKaos.value.toLowerCase() == "kaos" && tokenInput_kaos.value.toLowerCase() != redm)
+                        alert('invalid token');
+                    }
+                        if(point_db >=0 ){
+                        firebase.database().ref('users/' + uid+"/").update({
+                    point: point_db,
+                  }, function(error) {
+                    if (error) {
+                        console.log("failed");
+                    } else {
+                        console.log("success");
+                        /* alert("Poin Collection succeed.\nPoint : "+point_db); */
+                        tokenInput_collect.value = "";
+                    }
+                  });
+                    }
+                        else{
+                        alert("Sorry you dont have enough point.\nNeed more "+point_db);    
+                        }
+                    });
+                    
+                    
+                    return false;
+                
+            }
+            }
+                else{
+                window.location.href = 'login.html';
+            }
+                });
+
+    </script>
+   
+    <script>
+      
+      /**********************\
+         * login status check *
+        \**********************/
+        
+
+        firebase.auth().onAuthStateChanged(function (user) {
+            if (user) {
+
+                 checkUser();
+                console.log(user);
+                document.getElementById('logout').onclick = function () {
+                    if (confirm('Logout?')) {
+                        firebase.auth().signOut(); // This will trigger onAuthStateChanged again, immediately.
+                    }
+                };
+            } else {
+                 //if not logged in yet
+                  window.location.href = 'login.html';
+
+            }
+        });
+
+        firebase.auth().onAuthStateChanged((user) => {
+          if (user) {
+            var uid = user.uid;
+            var Absen = firebase.database().ref('Absen').child(uid);
+        
+            Absen.on('value', function (r) {
+
+                $('#entries').html('Loading...');
+                var html = '';
+                r.forEach(function (item) {
+                    entry = item.val()
+                   // key = item.getKey()
+                    html = '<div class="col-lg-4" padding: 1em;">' +
+                            '<div class="card" style="margin-bottom : 2em; color:white;">' +
+                              '<div  class="card-header" style="background: #84817a;">' + excerpt(entry.tanggal) + '</div>' +
+                                '<div class="card-body" style="background: #75dab3;">' +
+                                  '<p class="card-text">Absen jam : ' + entry.time + ' | ' + 'Status :' + entry.status + ' </p>' +
+                                  '<p class="card-link">Lokasi : ' + excerpt(entry.lokasi) + '</p>' +
+      
+                                '</div>' +
+                            '</div>' +
+                          '</div> ' + html; // prepend the entry because we need to display it in reverse order
+                });
+
+                $('#entries').html(html);
+            });
+
+            /*************\
+         * Utilities *
+        \*************/
+
+        function strip(html) {
+            var tmp = document.createElement("DIV");
+            tmp.innerHTML = html;
+            return tmp.textContent || tmp.innerText || "";
+        }
+
+        function excerpt(text, length) {
+            text = strip(text);
+            text = $.trim(text); //trim whitespace
+            if (text.length > length) {
+                text = text.substring(0, length - 3) + '...';
+            }
+            return text;
+        }
+
+        function pad2Digit(num) {
+            return ('0' + num.toString()).slice(-2);
+        }
+
+        function datetimeFormat(timestamp) {
+            var dateObj = new Date(timestamp);
+            var en_month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            return dateObj.getDate() + ' ' + en_month[dateObj.getMonth()] + ' ' + pad2Digit(dateObj.getFullYear()) + ' ' + pad2Digit(dateObj.getHours()) + ':' + pad2Digit(dateObj.getMinutes());
+        }
+
+            
+          }
+        });
+     
+    </script>
+    <script type="text/javascript">
+      function startTime(){
+        var date = new Date();
+        var hh = date.getHours(); // 0 - 23
+        var mm = date.getMinutes(); // 0 - 59
+        var ss = date.getSeconds(); // 0 - 59
+        var session1 = "AM";
+        
+        if(hh == 0){
+            hh = 12;
+        }
+        
+        if(hh > 12){
+            hh = hh - 12;
+            session1 = "PM";
+        }
+        
+        hh = (hh < 10) ? "0" + hh : hh;
+        mm = (mm < 10) ? "0" + mm : mm;
+        ss = (ss < 10) ? "0" + ss : ss;
+        
+        var time1 = hh + ":" + mm + ":" + ss + " " + session1;
+        document.getElementById("MyClockDisplay").innerText = time1;
+        document.getElementById("MyClockDisplay").textContent = time1;
+        setTimeout(startTime, 1000);
+    }
+
+    startTime();
+    </script>
+    <script type="text/javascript">
+      function showTime1(){
+        var date = new Date();
+        var h = date.getHours(); // 0 - 23
+        var m = date.getMinutes(); // 0 - 59
+        var s = date.getSeconds(); // 0 - 59
+        var session = "AM";
+        
+        if(h == 0){
+            h = 12;
+        }
+        
+        if(h > 12){
+            h = h - 12;
+            session = "PM";
+        }
+        
+        h = (h < 10) ? "0" + h : h;
+        m = (m < 10) ? "0" + m : m;
+        s = (s < 10) ? "0" + s : s;
+        
+        var time = h + ":" + m + ":" + s + " " + session;
+        document.getElementById("MyClockDisplay1").innerText = time;
+        document.getElementById("MyClockDisplay1").textContent = time;
+        
+        setTimeout(showTime1, 1000);
+        
+    }
+        showTime1();
+    </script>
+     <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+     <script>
+       // Initialize Firebase
+       var config = {
+         apiKey: "AIzaSyBA9GF6vq0z5_qUWrVOUzaGy1P--ZqDQXM",
+         authDomain: "dscpens-event.firebaseapp.com",
+         databaseURL: "https://dscpens-event.firebaseio.com",
+         projectId: "dscpens-event",
+         storageBucket: "dscpens-event.appspot.com",
+         messagingSenderId: "980829139366"
+       };
+       firebase.initializeApp(config);
+       const messaging = firebase.messaging();
+ messaging.setBackgroundMessageHandler(function(payload) {
+  const title = 'DSC PENS';
+  const options = {
+   body: payload.data.body
+  };
+  return self.registration.showNotification(title, options);
+ });
+     </script>
+    <script>
+      const messaging = firebase.messaging();
+      messaging.requestPermission()
+      .then(function() {
+        console.log('Notification permission granted.');
+        return messaging.getToken();
+      })
+      .then(function(token) {
+        console.log(token);
+      })
+      .catch(function(err) {
+        console.log('Unable to get permission to notify.', err);
+      })
+    </script>
+    <script src="asset/front/js/jqBootstrapValidation.js"></script>
+    <script src="asset/front/js/contact_me.js"></script>
+
+    <script src="asset/front/js/freelancer.js"></script>
+
+  </body>
+
+</html>
